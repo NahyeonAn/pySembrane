@@ -1,0 +1,17 @@
+;
+;Input file created by Aspen Plus Rel. 39.0 at 19:32:38 Thu Feb 22, 2024
+;Directory c:\Users\chldu\Documents\GitHub\pySembrane\Casestudy  Runid GREENNH3
+;
+
+
+DYNAMICS
+    DYNAMICS RESULTS=ON
+
+STREAM MEMOUT 
+    SUBSTREAM MIXED TEMP=385.749579 PRES=1.0000000009 
+    MOLE-FLOW HYDRO-01 0.18358323303 / NITRO-01 0.02660648687 
+;
+;
+;
+;
+;

@@ -1,0 +1,17 @@
+;
+;Input file created by Aspen Plus Rel. 39.0 at 20:13:00 Mon Dec 4, 2023
+;Directory c:\Users\chldu\Documents\GitHub\MembraneH2\Membrane_package\Casestudy  Runid GREENNH3
+;
+
+
+DYNAMICS
+    DYNAMICS RESULTS=ON
+
+STREAM MEMOUT 
+    SUBSTREAM MIXED TEMP=386.924422 PRES=1.0000000007 
+    MOLE-FLOW HYDRO-01 1.2538228628 / NITRO-01 0.22556795964 
+;
+;
+;
+;
+;

@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _5910deu.inm
+MODNAME: apmain
+RUNID: _5910deu
+NEW_RUNID: _5910deu
+OLD_RUNID: _5910deu
+PDF: _5910deu.appdf
+USERNAME: ±Ë¡§»Ø09
+XMOD: C:\Program Files\AspenTech\Aspen Plus V12.1\Engine\xeq\apmain
+DBCONN: _5910deu.ads

@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _4054gxi.inm
+MODNAME: apmain
+RUNID: _4054gxi
+NEW_RUNID: _4054gxi
+OLD_RUNID: _4054gxi
+PDF: _4054gxi.appdf
+USERNAME: ±Ë¡§»Ø09
+XMOD: C:\Program Files\AspenTech\Aspen Plus V12.1\Engine\xeq\apmain
+DBCONN: _4054gxi.ads
