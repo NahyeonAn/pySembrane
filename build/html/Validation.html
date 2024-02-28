@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validation of pySembrane &mdash; pySembrane 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FAQs" href="FAQs.html" />
+    <link rel="prev" title="Example 3: Integrated process simulations with other processes for process level evaluation" href="Example3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #FFFFFF" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/pySembraneMain.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pySembrane.html">pySembrane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Validation of pySembrane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQs.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Citation.html">Citation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #FFFFFF" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pySembrane</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Validation of pySembrane</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Validation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="validation-of-pysembrane">
+<h1>Validation of pySembrane<a class="headerlink" href="#validation-of-pysembrane" title="Permalink to this heading"></a></h1>
+<p>The validation of the proposed pySembrane was established through a comparative analysis of the literature. The target system for validation was CO$_2$ separation from a gas mixture, with pySembrane applied across five distinct scenarios. Of these, three scenarios were compared against results from the Matlab-based ChemBrane cite{grainger2007simple} program, while the reliability of the remaining two was assessed by comparing outcomes with published literature data cite{gu2022mathematical, he2018carbon}. Table ref{tab:ValParameters} shows the parameter settings employed in the five scenarios.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="5"><p class="centered">
+<strong>Scenario</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Parameters</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature (T) [K]</p></td>
+<td><p>308</p></td>
+<td><p>308</p></td>
+<td><p>308</p></td>
+<td><p>298</p></td>
+<td><p>315</p></td>
+</tr>
+<tr class="row-even"><td><p>Feed pressure (Pf) [bar]</p></td>
+<td><p>35</p></td>
+<td><p>35</p></td>
+<td><p>15</p></td>
+<td><p>5</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Permeate pressure (Pp) [bar]</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Feed flow (Ff) [mol/s]</p></td>
+<td><p>0.35</p></td>
+<td><p>0.35</p></td>
+<td><p>0.35</p></td>
+<td><p>4.46E-04</p></td>
+<td><p>0.03</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sweep gas flow (Fsw) [mol/s]</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>2.01E-05</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Feed CO2 composition (yf) [mol%]</p></td>
+<td><p>10</p></td>
+<td><p>10</p></td>
+<td><p>10</p></td>
+<td><p>40</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Feed CH4 composition (yf) [mol%]</p></td>
+<td><p>90</p></td>
+<td><p>90</p></td>
+<td><p>90</p></td>
+<td><p>60</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>Feed H2 composition (yf) [mol%]</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>75</p></td>
+</tr>
+<tr class="row-odd"><td><p>Feed CO composition (yf) [mol%]</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>CO2 permeance [(mol/(m2 bar s)]</p></td>
+<td><p>3.21E-04</p></td>
+<td><p>3.21E-04</p></td>
+<td><p>3.21E-04</p></td>
+<td><p>8.41E-04</p></td>
+<td><p>6.96E-06</p></td>
+</tr>
+<tr class="row-odd"><td><p>CH4 permeance [(mol/(m2 bar s)]</p></td>
+<td><p>1.33E-05</p></td>
+<td><p>1.33E-05</p></td>
+<td><p>1.33E-05</p></td>
+<td><p>1.32E-05</p></td>
+<td><p>5.33E-07</p></td>
+</tr>
+<tr class="row-even"><td><p>H2 permeance [(mol/(m2 bar s)]</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>1.60E-03</p></td>
+</tr>
+<tr class="row-odd"><td><p>CO permeance [(mol/(m2 bar s)]</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>6.67E-07</p></td>
+</tr>
+<tr class="row-even"><td><p>N2 permeance [(mol/(m2 bar s)]</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>3.97E-05</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Module diameter (dm) [m]</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+<td><p>1.20E-02</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td><p>Fiber outer diameter (do) [mm]</p></td>
+<td><p>0.2</p></td>
+<td><p>0.2</p></td>
+<td><p>0.17</p></td>
+<td><p>0.15</p></td>
+<td><p>0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fiber inner diameter (di) [mm]</p></td>
+<td><p>0.25</p></td>
+<td><p>0.25</p></td>
+<td><p>0.12</p></td>
+<td><p>0.2</p></td>
+<td><p>0.25</p></td>
+</tr>
+<tr class="row-even"><td><p>Fiber length (L) [m]</p></td>
+<td><p>0.6</p></td>
+<td><p>0.6</p></td>
+<td><p>1.5</p></td>
+<td><p>0.3</p></td>
+<td><p>0.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of fibers (Nf)</p></td>
+<td><p>60,000</p></td>
+<td><p>60,000</p></td>
+<td><p>60,000</p></td>
+<td><p>106</p></td>
+<td><p>60,000</p></td>
+</tr>
+<tr class="row-even"><td><p>Module configuration</p></td>
+<td><p>COFS</p></td>
+<td><p>CTFS</p></td>
+<td><p>CTFS</p></td>
+<td><p>CTFS</p></td>
+<td><p>CTFS</p></td>
+</tr>
+</tbody>
+</table>
+<p>The validation results are presented in Figure ref{fig:ValidationError} and Table ref{tab:ValidationResults}. In comparisons with ChemBrane, all scenarios—except for the permeate flow in scenario 3—showed errors below 5%, indicating a strong similarity. Notably, the permeate flow in scenario 3 displayed a 12.48% difference, because ChemBrane could not consider pressure drop in the system, unlike pySembrane. For Scenario 3, as the feed pressure decreases to 15 bar, the difference between the results of ChemBrane and pySembrane magnifies due to sensitivity to pressure drop. Additionally, while pySembrane exhibited an error exceeding 5% in scenario 4, the results closely align with those reported in the literature, as demonstrated in the Figures ref{fig:ValidationError} (b) and (c). This is because the measured value of permeate flow was too small, so the relative error reacts sensitively to little differences. On the other hand, in the overall comparison with the literature, the error was generally less than 5%. This finding highlights how pySembrane provides results consistent with previous research, demonstrating its reliability.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Permeate flow (mol/s)</p></th>
+<th class="head"><p>Permeate CO2 purity (mol%)</p></th>
+<th class="head"><p>Retentate flow (mol/s)</p></th>
+<th class="head"><p>Retentate CH4 purity (mol%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ChemBrane</p></td>
+<td><p>0.03</p></td>
+<td><p>59.12</p></td>
+<td><p>0.32</p></td>
+<td><p>94.77</p></td>
+</tr>
+<tr class="row-odd"><td><p>pySembrane</p></td>
+<td><p>0.0293</p></td>
+<td><p>58.7256</p></td>
+<td><p>0.3208</p></td>
+<td><p>94.4371</p></td>
+</tr>
+<tr class="row-even"><td><p>Difference (%)</p></td>
+<td><p>-2.28</p></td>
+<td><p>-0.67</p></td>
+<td><p>0.24</p></td>
+<td><p>-0.35</p></td>
+</tr>
+<tr class="row-odd"><td><p>ChemBrane</p></td>
+<td><p>0.03</p></td>
+<td><p>59.88</p></td>
+<td><p>0.32</p></td>
+<td><p>94.94</p></td>
+</tr>
+<tr class="row-even"><td><p>pySembrane</p></td>
+<td><p>0.0298</p></td>
+<td><p>59.4229</p></td>
+<td><p>0.3203</p></td>
+<td><p>94.5866</p></td>
+</tr>
+<tr class="row-odd"><td><p>Difference (%)</p></td>
+<td><p>-0.76</p></td>
+<td><p>-0.76</p></td>
+<td><p>0.09</p></td>
+<td><p>-0.37</p></td>
+</tr>
+<tr class="row-even"><td><p>ChemBrane</p></td>
+<td><p>0.02</p></td>
+<td><p>56.72</p></td>
+<td><p>0.33</p></td>
+<td><p>92.92</p></td>
+</tr>
+<tr class="row-odd"><td><p>pySembrane</p></td>
+<td><p>0.0179</p></td>
+<td><p>55.2064</p></td>
+<td><p>0.3320</p></td>
+<td><p>92.4568</p></td>
+</tr>
+<tr class="row-even"><td><p>Difference (%)</p></td>
+<td><p>-12.53</p></td>
+<td><p>-2.67</p></td>
+<td><p>0.80</p></td>
+<td><p>-0.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>Experiemental</p></td>
+<td><p>4.464.E-05</p></td>
+<td><p>54.40</p></td>
+<td><p>4.219.E-04</p></td>
+<td><p>63.30</p></td>
+</tr>
+<tr class="row-even"><td><p>pySembrane</p></td>
+<td><p>4.6919.E-05</p></td>
+<td><p>55.3833</p></td>
+<td><p>4.1963.E-04</p></td>
+<td><p>63.6336</p></td>
+</tr>
+<tr class="row-odd"><td><p>Difference (%)</p></td>
+<td><p>5.10</p></td>
+<td><p>1.81</p></td>
+<td><p>-0.54</p></td>
+<td><p>0.53</p></td>
+</tr>
+<tr class="row-even"><td><p>Experiemental</p></td>
+<td><p>0.007</p></td>
+<td><p>11.50</p></td>
+<td><p>0.023</p></td>
+<td><p>5.16</p></td>
+</tr>
+<tr class="row-odd"><td><p>pySembrane</p></td>
+<td><p>0.0071</p></td>
+<td><p>11.5206</p></td>
+<td><p>0.0230</p></td>
+<td><p>5.1683</p></td>
+</tr>
+<tr class="row-even"><td><p>Difference (%)</p></td>
+<td><p>0.47</p></td>
+<td><p>0.18</p></td>
+<td><p>-0.11</p></td>
+<td><p>0.16</p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/ValidationError.png"><img alt="ValidationError" class="align-center" src="_images/ValidationError.png" style="width: 700px;" /></a>
+<hr class="docutils" />
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Example3.html" class="btn btn-neutral float-left" title="Example 3: Integrated process simulations with other processes for process level evaluation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FAQs.html" class="btn btn-neutral float-right" title="FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, NahyeonAn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

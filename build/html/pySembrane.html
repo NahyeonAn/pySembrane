@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pySembrane &mdash; pySembrane 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Property calculation module" href="Calculator.html" />
+    <link rel="prev" title="Installation" href="Installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #FFFFFF" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/pySembraneMain.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pySembrane</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Calculator.html">Property calculation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimulAnalyzer.html">Process simulation and results analysis module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Validation.html">Validation of pySembrane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQs.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Citation.html">Citation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #FFFFFF" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pySembrane</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">pySembrane</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pySembrane.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pysembrane">
+<h1>pySembrane<a class="headerlink" href="#pysembrane" title="Permalink to this heading"></a></h1>
+<p>pySembrane consists of three modules for property calculation, process simulation, and results analysis.The property calculation module calculates permeance, a crucial membrane property for process simulations. Permeance, which describes how gases move through the membrane, is expressed as a function of the membrane thickness, gas uptake, and self-diffusivity. The gas uptake and self-diffusivity could be derived from experiments or molecular simulations. The module provides additional functions to extract the self-diffusivity from molecular dynamics simulation results for easier permeance calculation. The process simulation module develops a hollow fiber membrane process and runs the simulation. Parameters related to the module design, gas and mass transfer, membrane properties, and boundary conditions are set with user-provided. In addition, the permeance calculated from the property calculation module could be used in the simulation. After the simulation was terminated, users could acquire simulation results, such as the mass flow rate, pressure, and composition along the z-axis. The results analysis module examines the economic feasibility of the process and visualizes simulation outcomes along the z-axis, leveraging data from the process simulation module. This module offers an easier assessment of the economic viability of various membrane materials and process parameters.</p>
+<a class="reference internal image-reference" href="_images/pySembraneStructure.png"><img alt="pySembraneStructure" class="align-center" src="_images/pySembraneStructure.png" style="width: 1000px;" /></a>
+<hr class="docutils" />
+<p>Usages, the function structure within the module, and the theory used are summarized for each module.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Calculator.html">Property calculation module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Calculator.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Calculator.html#function-structures">Function structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Calculator.html#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SimulAnalyzer.html">Process simulation and results analysis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SimulAnalyzer.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimulAnalyzer.html#module-pySembrane.simulator">Class documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SimulAnalyzer.html#theory">Theory</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Calculator.html" class="btn btn-neutral float-right" title="Property calculation module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, NahyeonAn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

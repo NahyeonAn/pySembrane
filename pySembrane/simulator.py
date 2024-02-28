@@ -1,3 +1,10 @@
+"""
+====================================
+ :mod:`simulator` module
+====================================
+This module define the hollow fiber membrane module and perform and analyze process simulation.
+"""
+
 #%% Library import
 import numpy as np
 from scipy.integrate import odeint

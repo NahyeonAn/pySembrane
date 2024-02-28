@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example 3: Integrated process simulations with other processes for process level evaluation &mdash; pySembrane 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Validation of pySembrane" href="Validation.html" />
+    <link rel="prev" title="Example 2: Rigorous evaluation of membrane gas separation process based on economic analysis" href="Example2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #FFFFFF" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/pySembraneMain.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pySembrane.html">pySembrane</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Examples.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Example1.html">Example 1: Numerous membrane screening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example2.html">Example 2: Rigorous evaluation of membrane gas separation process based on economic analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Example 3: Integrated process simulations with other processes for process level evaluation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-description">Example description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plant-model-devlopment">Plant model devlopment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results-analysis">Results analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Validation.html">Validation of pySembrane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQs.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Citation.html">Citation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #FFFFFF" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pySembrane</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="Examples.html">Examples</a></li>
+      <li class="breadcrumb-item active">Example 3: Integrated process simulations with other processes for process level evaluation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Example3.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-3-integrated-process-simulations-with-other-processes-for-process-level-evaluation">
+<h1>Example 3: Integrated process simulations with other processes for process level evaluation<a class="headerlink" href="#example-3-integrated-process-simulations-with-other-processes-for-process-level-evaluation" title="Permalink to this heading"></a></h1>
+<section id="example-description">
+<h2>Example description<a class="headerlink" href="#example-description" title="Permalink to this heading"></a></h2>
+<p>In the last example, the process model is developed including the green NH$_3$ decomposition and H$_2$ purification, and the plant scale analysis is conducted for the selected optimal MOF membrane, integrating with the membrane process module. As shown in Figure ref{fig:Casestudy3}(a), the processes, excluding the membrane process module, were developed using commercial software, Aspen Plus cite{lee2023carbon}, while the membrane process module was modeled using the pySembrane. The integration between the two software tools took place in the Python environment, and each process model exchanged stream flow and pressure results to perform simulations. Figure ref{fig:Casestudy3}(b) illustrates the integrated process, and each software is highlighted in blue and green, respectively. The entire process involves the decomposition of transported green NH$_3$ in the reactor, separation of unreacted NH$_3$ in the pressure swing adsorption process (PSA1), and hydrogen production in the PSA2 unit. The stream produced at the bottom of PSA2 contains a significant amount of hydrogen, necessitating additional separation processes to increase the H$_2$ production. Using pySembrane, the outlet stream of the compressor unit (Comp) is set as the feed for membrane process simulation, and the results are then utilized as input variables in Aspen Plus to determine the total production rate of H$_2$.</p>
+<a class="reference internal image-reference" href="_images/Casestudy3.png"><img alt="Casestudy3" class="align-center" src="_images/Casestudy3.png" style="width: 700px;" /></a>
+</section>
+<hr class="docutils" />
+<section id="plant-model-devlopment">
+<h2>Plant model devlopment<a class="headerlink" href="#plant-model-devlopment" title="Permalink to this heading"></a></h2>
+<p>The plant model developed by commercial software and the membrane separation model developed by pySembrane are integrated. Figure ref{fig:Casestudy3ProcessModel} shows the entire process of decomposing green NH$_3$ and producing green H$_2$ by separating H$_2$ and N$_2$. The process model was simulated using Aspen Plus V14.0 with the Peng-Robinson fluid package for the thermodynamic model. Stream 101, the green NH$_3$ feedstock, is first decompressed via a valve (VLV-100) and subsequently pressurized to 8.5 bar using a pump (P-100). This feed stream is then heated to 100 textcelsius in the heat exchanger (HX-101) before entering the NH$_3$ decomposition reactor (R-200). Through the reactor, green NH$_3$ is converted to H$_2$ and N$_2$, and a high-temperature H$_2$/N$_2$ mixture stream containing unreacted NH$_3$ is used as a hot stream of the heat exchanger (HX-100) for feed heating, which is then cooled to 105 textcelsius. The reactor outlet stream repeats the cooling and separation process to produce the final product, H$_2$. Initially, unreacted NH$_3$ is removed in the pressure swing adsorption process (ADS-300) after cooling to 40 textcelsius in a heat exchanger (HX-102) using cooling water. The H$_2$/N$_2$ mixture gas produced by the raffinate flow of the PSA process goes through the second PSA process (PSA-400) to produce high-purity H$_2$. Since the tail gas produced in PSA-400 still contains a large amount of H$_2$, additional H$_2$ is produced through the membrane-based separation process after being pressurized by a compressor (COMP-100) to increase production. Table ref{tab:ProcessSpecification} and ref{tab:StreamResults} list the detailed specifications of each unit and stream and the simulation results for each stream, respectively.</p>
+<a class="reference internal image-reference" href="_images/Casestudy3ProcessModel.png"><img alt="Casestudy3ProcessModel" class="align-center" src="_images/Casestudy3ProcessModel.png" style="width: 700px;" /></a>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Specification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="2"><p>VLV-100</p></td>
+<td><p>Adiabatic flash</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pressure: 6bar</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>P-100</p></td>
+<td><p>Pressure increase: 250kPa</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pump efficiency: 75%</p></td>
+</tr>
+<tr class="row-even"><td><p>HX-101</p></td>
+<td><p>Cold stream outlet temperature: 100C</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>R-200</p></td>
+<td><p>Reaction: 2NH3-&gt;3H2+N2</p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature: 600C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fraction of conversion:0.9</p></td>
+</tr>
+<tr class="row-even"><td><p>Pressure: 8.5bar</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>HX-102</p></td>
+<td><p>Cooling water inlet temperature: 15C</p></td>
+</tr>
+<tr class="row-even"><td><p>Hot stream outlet temperature: 40C</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADS-300</p></td>
+<td><p>Split fraction of H2,N2,O2 and H2O: 1</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>HX-103</p></td>
+<td><p>Cooling water inlet temperature: 15C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hot stream outlet temperature: 40C</p></td>
+</tr>
+<tr class="row-even"><td><p>PSA-400</p></td>
+<td><p>Split fraction of H2: 0.8</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>COMP-100</p></td>
+<td><p>Pressure: 11.15bar</p></td>
+</tr>
+<tr class="row-even"><td><p>Compressor efficiency: 0.75</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="results-analysis">
+<h2>Results analysis<a class="headerlink" href="#results-analysis" title="Permalink to this heading"></a></h2>
+<p>Figure ref{fig:Casestudy3}(c–d) presents the simulation results corresponding to the conversion rate of the NH$_3$ decomposition reactor and the ratio split to the bottom in the PSA2 unit. F$_f$ and y$_f$ represent the flow rate and composition of the feed entering the membrane module, respectively, and F$_p$ and y$_p$ denote the flow rate and composition of the permeate side produced in the membrane process. As shown in Figure ref{fig:Casestudy3}(c), with an increase in the conversion rate of the NH$_3$ decomposition reactor, the flow rates of N$_2$ and H$_2$ increase, leading to an increase in the feed flow rate of the module. Consequently, flow rates and H$_2$ purity on the permeate side increased. Figure ref{fig:Casestudy3}(d) illustrates the PSA2 split ratio, which represents the ratio of the flow rate entering the membrane process to the total flow rate produced in the PSA2 unit, as it increases, indicating an increase in both the feed flow rate and composition. As a result, the H$_2$ production on the permeate side is increased, with the purity of H$_2$ showing a tendency to increase significantly. Figure ref{fig:Casestudy3}(e) compares the total production of H$_2$ according to the number of fibers in the membrane process module, depending on the presence of the membrane process (MP). Without a membrane process, the production rate is low at 15.2 kg/hr, but with additional H$_2$ production from the stream discarded by the membrane process, the overall production of H$_2$ significantly increases. Moreover, as the number of fibers in the module increases, the H$_2$ production rate increases significantly, contributing to the overall productivity of the process. This example allows for the analysis of the impact of operating conditions in upstream processes on the membrane process and the influence of membrane process conditions on the overall process.</p>
+</section>
+<hr class="docutils" />
+<section id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this heading"></a></h2>
+<p>First, import the necessary libraries required to solve the example. Then, run Aspen Plus to open the example file and define each stream and unit block.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Load process model ###</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">win32com.client</span> <span class="k">as</span> <span class="nn">win32</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">simulator</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;Casestudy/GreenNH3.apw&#39;</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">win32</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">&quot;Apwn.Document&quot;</span><span class="p">)</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">InitFromArchive2</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">MyBlocks</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">Tree</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Blocks&quot;</span><span class="p">)</span>
+<span class="n">MyStreams</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">Tree</span><span class="o">.</span> <span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Streams&quot;</span><span class="p">)</span>
+
+<span class="n">ProcOut</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;402-2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Define the parameters needed for the membrane process simulation. However, the operating conditions of membrane process are determined by the results of stream 402-2 within the Aspen Plus model, so these results are imported.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Module design ###</span>
+<span class="n">n_component</span> <span class="o">=</span> <span class="mi">2</span>               <span class="c1"># number of gas components</span>
+<span class="n">config</span> <span class="o">=</span> <span class="s1">&#39;COFS&#39;</span>               <span class="c1"># module configuration</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">0.6</span><span class="o">*</span><span class="mf">1e3</span>                   <span class="c1"># fiber length (mm)</span>
+<span class="n">D_module</span> <span class="o">=</span> <span class="mf">0.3</span><span class="o">*</span><span class="mf">1e3</span>            <span class="c1"># Module diameter (mm)</span>
+<span class="n">N_fiber</span> <span class="o">=</span> <span class="mi">100</span>                 <span class="c1"># number of fiber (-)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>                       <span class="c1"># number of nodes (-)</span>
+
+<span class="c1">### Membrane property ###</span>
+<span class="n">D_inner</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">1e-1</span>            <span class="c1"># Membrane inner diameter (mm)</span>
+<span class="n">D_outer</span> <span class="o">=</span> <span class="mi">250</span><span class="o">*</span><span class="mf">1e-1</span>            <span class="c1"># Membrane outer diameter (mm)</span>
+
+<span class="c1">### Gas property ###</span>
+<span class="n">Mw_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2e-3</span><span class="p">,</span> <span class="mf">28e-3</span><span class="p">])</span>                 <span class="c1"># molar weight (kg/mol)</span>
+<span class="n">rho_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.08988</span><span class="p">,</span> <span class="mf">1.1606</span><span class="p">])</span><span class="o">*</span><span class="mf">1e-9</span>       <span class="c1"># density (kg/mm3)</span>
+<span class="n">mu_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.94e-3</span><span class="p">,</span> <span class="mf">1.89e-3</span><span class="p">])</span>            <span class="c1"># viscosity (Pa s)</span>
+
+<span class="c1">### Mass transfer property ###</span>
+<span class="n">k_mass</span> <span class="o">=</span> <span class="mf">1e-1</span>              <span class="c1"># Mass transfer coeff. (mm/s)</span>
+
+<span class="c1"># Load Asepn results (Operating conditions)</span>
+<span class="n">P_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES_OUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>  <span class="c1"># pressure of feed side (bar)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">+</span> <span class="mf">273.15</span>
+<span class="n">F_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_MOLEFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e3</span>
+<span class="n">x_H2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+<span class="n">x_N2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+<span class="n">y_feed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x_H2</span><span class="p">,</span> <span class="n">x_N2</span><span class="p">])</span>     <span class="c1"># mole fraction (H2, N2)</span>
+</pre></div>
+</div>
+<p>Load the membrane properties of the best MOF determined from a previous example from an Excel file, and then conduct the membrane process simulation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;240221_Casestudy2_results.csv&#39;</span><span class="p">)</span>
+<span class="n">best_mof</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;LCOH_opt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+<span class="n">a_H2</span><span class="p">,</span> <span class="n">a_N2</span> <span class="o">=</span> <span class="n">best_mof</span><span class="p">[[</span><span class="s1">&#39;a_H2(mol/(mm^2 bar s))&#39;</span><span class="p">,</span> <span class="s1">&#39;a_N2(mol/(mm^2 bar s))&#39;</span><span class="p">]]</span>
+<span class="n">a_perm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a_H2</span><span class="p">,</span> <span class="n">a_N2</span><span class="p">])</span>
+
+<span class="n">mem</span> <span class="o">=</span> <span class="n">MembraneProc</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">D_module</span><span class="p">,</span> <span class="n">N_fiber</span><span class="p">,</span>
+            <span class="n">n_component</span><span class="p">,</span> <span class="n">n_node</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">mem</span><span class="o">.</span><span class="n">membrane_info</span><span class="p">(</span><span class="n">a_perm</span><span class="p">,</span> <span class="n">D_inner</span><span class="p">,</span> <span class="n">D_outer</span><span class="p">)</span>
+<span class="n">mem</span><span class="o">.</span><span class="n">gas_prop_info</span><span class="p">(</span><span class="n">Mw_i</span><span class="p">,</span> <span class="n">mu_i</span><span class="p">,</span> <span class="n">rho_i</span><span class="p">)</span>
+<span class="n">mem</span><span class="o">.</span><span class="n">mass_trans_info</span><span class="p">(</span><span class="n">k_mass</span><span class="p">)</span>
+<span class="n">mem</span><span class="o">.</span><span class="n">boundaryC_info</span><span class="p">(</span><span class="n">y_feed</span><span class="p">,</span> <span class="n">P_feed</span><span class="p">,</span> <span class="n">F_feed</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">mem</span><span class="o">.</span><span class="n">initialC_info</span><span class="p">()</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">run_mem</span><span class="p">(</span><span class="n">cp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cp_cond</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">298</span><span class="p">])</span>
+<span class="n">err</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">MassBalance</span><span class="p">()</span>
+<span class="n">mem</span><span class="o">.</span><span class="n">PlotResults</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Utilize the results of the membrane process simulation as input for the MEMOUT stream in the plant model. Enter the flow rate for each component, temperature, and pressure, then run the Aspen Plus file. This calculates the additional H$_2$ production through the membrane module to derive the total H$_2$ production.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Process integration ###</span>
+<span class="n">MemOut</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MEMOUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
+<span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+<span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+<span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">T</span>
+<span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">sim</span><span class="o">.</span><span class="n">Run2</span><span class="p">()</span>
+<span class="n">sim</span><span class="o">.</span><span class="n">Save</span><span class="p">()</span>
+
+<span class="n">PureH2</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PUREH2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;RES_MASSFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total H2 production: &quot;</span><span class="p">,</span> <span class="n">PureH2</span><span class="p">,</span> <span class="s2">&quot;kg/hr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Perform sensitivity analysis to analyze the impact of various process variables. Below, a loop repeatedly simulates the process models as the NH3 conversion rate in the NH$_3$ decomposition reactor (R-200) changes from 50 to 95%.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Sensitivity analysis ###</span>
+<span class="c1">## Sensitivity analysis</span>
+<span class="n">conv_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">H2_prod</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_conv</span> <span class="ow">in</span> <span class="n">conv_list</span><span class="p">:</span>
+    <span class="n">Rxr</span> <span class="o">=</span> <span class="n">MyBlocks</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;R-200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;CONV&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+    <span class="n">Rxr</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">_conv</span>
+
+    <span class="n">sim</span><span class="o">.</span><span class="n">Run2</span><span class="p">()</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">Save</span><span class="p">()</span>
+
+    <span class="c1"># Operating conditions</span>
+    <span class="n">P_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES_OUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>  <span class="c1"># pressure of feed side (bar)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">+</span> <span class="mf">273.15</span>
+    <span class="n">F_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_MOLEFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e3</span>
+    <span class="n">x_H2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">x_N2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">y_feed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x_H2</span><span class="p">,</span> <span class="n">x_N2</span><span class="p">])</span>     <span class="c1"># mole fraction (H2, N2)</span>
+    <span class="n">Ff_z0_init</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">y_feed</span><span class="o">*</span><span class="n">F_feed</span><span class="p">)</span>
+
+    <span class="n">mem</span><span class="o">.</span><span class="n">boundaryC_info</span><span class="p">(</span><span class="n">y_feed</span><span class="p">,</span> <span class="n">P_feed</span><span class="p">,</span> <span class="n">F_feed</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">mem</span><span class="o">.</span><span class="n">initialC_info</span><span class="p">()</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">run_mem</span><span class="p">(</span><span class="n">cp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cp_cond</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">298</span><span class="p">])</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">MassBalance</span><span class="p">()</span>
+
+    <span class="n">MemOut</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MEMOUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">T</span><span class="o">-</span><span class="mf">273.15</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">sim</span><span class="o">.</span><span class="n">Run2</span><span class="p">()</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">Save</span><span class="p">()</span>
+
+    <span class="n">PureH2</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PUREH2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;RES_MASSFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">H2_prod</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">F_feed</span><span class="p">,</span> <span class="n">x_H2</span><span class="p">,</span> <span class="n">x_N2</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">PureH2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Below is the code to plot the flow rate and composition of the feed entering the membrane module and the flow rate and composition of the permeate side produced as reactor conversion changes, yielding Figure 6(c) upon execution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Results plot ###</span>
+<span class="n">conv_nd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">H2_prod</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">conv_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">conv_nd</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;F$\mathrm{_</span><span class="si">{f}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">line7</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">conv_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">conv_nd</span><span class="p">[:,</span><span class="mi">5</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;F$\mathrm{_</span><span class="si">{p}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Flowrate [mol/s]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">line8</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">conv_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span>
+                <span class="n">conv_nd</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y$\mathrm{_{f,H_2}}$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">line6</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">conv_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span>
+                <span class="n">conv_nd</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="n">conv_nd</span><span class="p">[:,</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y$\mathrm{_{p,H_2}}$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mole fraction [-]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="n">plots</span> <span class="o">=</span> <span class="n">line2</span><span class="o">+</span><span class="n">line7</span><span class="o">+</span> <span class="n">line6</span><span class="o">+</span><span class="n">line8</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">plots</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Reactor conversion [%]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Below is the code for comparing the process performance as the split ratio of the stream produced in the second PSA process (PSA-400), specifically stream 402-1, changes from 50 to 95%. The split ratio is adjusted and the simulation is repeated through a loop, with the results being saved.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Sensitivity analysis</span>
+<span class="n">split_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">split_res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_split</span> <span class="ow">in</span> <span class="n">split_list</span><span class="p">:</span>
+
+    <span class="n">Rxr</span> <span class="o">=</span> <span class="n">MyBlocks</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PSA-400&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FRACS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;401&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span>
+    <span class="n">Rxr</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">_split</span>
+
+    <span class="n">sim</span><span class="o">.</span><span class="n">Run2</span><span class="p">()</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">Save</span><span class="p">()</span>
+
+    <span class="c1"># Operating conditions</span>
+    <span class="n">P_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES_OUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>  <span class="c1"># pressure of feed side (bar)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">+</span> <span class="mf">273.15</span>
+    <span class="n">F_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_MOLEFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e3</span>
+    <span class="n">x_H2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">x_N2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">y_feed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x_H2</span><span class="p">,</span> <span class="n">x_N2</span><span class="p">])</span>     <span class="c1"># mole fraction (H2, N2)</span>
+    <span class="n">Ff_z0_init</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">y_feed</span><span class="o">*</span><span class="n">F_feed</span><span class="p">)</span>
+
+    <span class="n">mem</span><span class="o">.</span><span class="n">boundaryC_info</span><span class="p">(</span><span class="n">y_feed</span><span class="p">,</span> <span class="n">P_feed</span><span class="p">,</span> <span class="n">F_feed</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">mem</span><span class="o">.</span><span class="n">initialC_info</span><span class="p">()</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">run_mem</span><span class="p">(</span><span class="n">cp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cp_cond</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">298</span><span class="p">])</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">MassBalance</span><span class="p">()</span>
+
+    <span class="n">MemOut</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MEMOUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">T</span><span class="o">-</span><span class="mf">273.15</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">sim</span><span class="o">.</span><span class="n">Run2</span><span class="p">()</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">Save</span><span class="p">()</span>
+
+    <span class="n">PureH2</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PUREH2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;RES_MASSFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">split_res</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">F_feed</span><span class="p">,</span> <span class="n">x_H2</span><span class="p">,</span> <span class="n">x_N2</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">PureH2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Below is the code for visualizing the flow rate and composition of the feed entering the membrane module and the flow rate and composition of the permeate side produced as the PSA process’s split ratio changes, yielding Figure 6(d) upon execution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">split_nd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">split_res</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">split_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">split_nd</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;F$\mathrm{_</span><span class="si">{f}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">line7</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">split_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">split_nd</span><span class="p">[:,</span><span class="mi">5</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;F$\mathrm{_</span><span class="si">{p}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Flowrate [mol/s]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">line3</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">split_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">split_nd</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y$\mathrm{_{f,H_2}}$&#39;</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">line6</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">split_list</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span>
+                <span class="n">split_nd</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="n">split_nd</span><span class="p">[:,</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y$\mathrm{_{p,H_2}}$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mole fraction&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="n">plots</span> <span class="o">=</span> <span class="n">line2</span><span class="o">+</span><span class="n">line7</span><span class="o">+</span> <span class="n">line3</span><span class="o">+</span><span class="n">line6</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">]</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">plots</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;PSA2 split ratio [%]&#39;</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Below is the code to analyze the variation in H$_2$ production as the number of fibers in the membrane process changes. Through a loop, the process performance can be analyzed as the number of fibers changes from 100 to 500.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Sensitivity analysis</span>
+<span class="n">nnn_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">H2_prod</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">nnn</span> <span class="ow">in</span> <span class="n">nnn_list</span><span class="p">:</span>
+
+    <span class="n">Rxr</span> <span class="o">=</span> <span class="n">MyBlocks</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;R-200&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;CONV&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+    <span class="n">Rxr</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="mf">0.9</span>
+
+    <span class="n">sim</span><span class="o">.</span><span class="n">Run2</span><span class="p">()</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">Save</span><span class="p">()</span>
+
+    <span class="c1"># Operating conditions</span>
+    <span class="n">P_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES_OUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>  <span class="c1"># pressure of feed side (bar)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">+</span> <span class="mf">273.15</span>
+    <span class="n">F_feed</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;RES_MOLEFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e3</span>
+    <span class="n">x_H2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">x_N2</span> <span class="o">=</span> <span class="n">ProcOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MOLEFRAC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">y_feed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x_H2</span><span class="p">,</span> <span class="n">x_N2</span><span class="p">])</span>     <span class="c1"># mole fraction (H2, N2)</span>
+    <span class="n">Ff_z0_init</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">y_feed</span><span class="o">*</span><span class="n">F_feed</span><span class="p">)</span>
+
+    <span class="n">mem</span> <span class="o">=</span> <span class="n">MembraneProc</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">D_module</span><span class="p">,</span> <span class="n">nnn</span><span class="p">,</span>
+            <span class="n">n_component</span><span class="p">,</span> <span class="n">n_node</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">mem</span><span class="o">.</span><span class="n">membrane_info</span><span class="p">(</span><span class="n">a_perm</span><span class="p">,</span> <span class="n">D_inner</span><span class="p">,</span> <span class="n">D_outer</span><span class="p">)</span>
+    <span class="n">mem</span><span class="o">.</span><span class="n">gas_prop_info</span><span class="p">(</span><span class="n">Mw_i</span><span class="p">,</span> <span class="n">mu_i</span><span class="p">,</span> <span class="n">rho_i</span><span class="p">)</span>
+    <span class="n">mem</span><span class="o">.</span><span class="n">mass_trans_info</span><span class="p">(</span><span class="n">k_mass</span><span class="p">)</span>
+    <span class="n">mem</span><span class="o">.</span><span class="n">boundaryC_info</span><span class="p">(</span><span class="n">y_feed</span><span class="p">,</span> <span class="n">P_feed</span><span class="p">,</span> <span class="n">F_feed</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">mem</span><span class="o">.</span><span class="n">initialC_info</span><span class="p">()</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">run_mem</span><span class="p">(</span><span class="n">cp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cp_cond</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">298</span><span class="p">])</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">mem</span><span class="o">.</span><span class="n">MassBalance</span><span class="p">()</span>
+
+    <span class="n">MemOut</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MEMOUT&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;HYDRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;FLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;NITRO-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mf">1e-3</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;TEMP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">T</span><span class="o">-</span><span class="mf">273.15</span>
+    <span class="n">MemOut</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PRES&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;MIXED&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">sim</span><span class="o">.</span><span class="n">Run2</span><span class="p">()</span>
+    <span class="n">sim</span><span class="o">.</span><span class="n">Save</span><span class="p">()</span>
+
+    <span class="n">PureH2</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;PUREH2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;RES_MASSFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">withoutMem</span> <span class="o">=</span> <span class="n">MyStreams</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="s2">&quot;401&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;Output&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ElementS</span><span class="p">(</span><span class="s2">&quot;RES_MASSFLOW&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">Value</span>
+    <span class="n">H2_prod</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">F_feed</span><span class="p">,</span> <span class="n">x_H2</span><span class="p">,</span> <span class="n">x_N2</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">PureH2</span><span class="p">,</span> <span class="n">withoutMem</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Below is the code to plot the impact of the number of membrane fibers on H$_2$ production, analyzing the production with and without the membrane process (MP) and according to the number of fibers. Executing the code below yields Figure 6(e).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nnn_nd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">H2_prod</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span><span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">line2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nnn_list</span><span class="p">),</span> <span class="n">nnn_nd</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;With MP&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">line7</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nnn_list</span><span class="p">),</span> <span class="n">nnn_nd</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Without MP&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;H$\mathrm</span><span class="si">{_2}</span><span class="s1">$ production [kg/hr]&#39;</span><span class="p">)</span>
+<span class="n">plots</span> <span class="o">=</span> <span class="n">line2</span><span class="o">+</span><span class="n">line7</span><span class="o">+</span> <span class="n">line6</span><span class="o">+</span><span class="n">line8</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">get_label</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">[:</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">plots</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Fibers [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Example2.html" class="btn btn-neutral float-left" title="Example 2: Rigorous evaluation of membrane gas separation process based on economic analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Validation.html" class="btn btn-neutral float-right" title="Validation of pySembrane" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, NahyeonAn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

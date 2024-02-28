@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; pySembrane 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Example 1: Numerous membrane screening" href="Example1.html" />
+    <link rel="prev" title="Process simulation and results analysis module" href="SimulAnalyzer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #FFFFFF" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/pySembraneMain.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pySembrane.html">pySembrane</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Example1.html">Example 1: Numerous membrane screening</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example2.html">Example 2: Rigorous evaluation of membrane gas separation process based on economic analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example3.html">Example 3: Integrated process simulations with other processes for process level evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Validation.html">Validation of pySembrane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQs.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Citation.html">Citation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #FFFFFF" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pySembrane</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
+<p>The application of pySembrane is demonstrated through an example of membrane screening for green H$_2$ separation. Practical case studies performed with the package and discussion of the results illustrate how pySembrane can be beneficially applied across various research fields and emphasize the reliability and compatibility of the package.</p>
+<a class="reference internal image-reference" href="_images/CasestudiesScheme.png"><img alt="CasestudiesScheme" class="align-center" src="_images/CasestudiesScheme.png" style="width: 700px;" /></a>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Example1.html">Example 1: Numerous membrane screening</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Example1.html#example-description">Example description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example1.html#method">Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example1.html#results-analysis">Results analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example1.html#source-code">Source code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Example2.html">Example 2: Rigorous evaluation of membrane gas separation process based on economic analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Example2.html#example-description">Example description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example2.html#method">Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example2.html#results-analysis">Results analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example2.html#sensitivity-analysis">Sensitivity analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example2.html#source-code">Source code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Example3.html">Example 3: Integrated process simulations with other processes for process level evaluation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Example3.html#example-description">Example description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example3.html#plant-model-devlopment">Plant model devlopment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example3.html#results-analysis">Results analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Example3.html#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<p><strong>Problem deifinition and process description</strong></p>
+<p>For the optimal MOF selection of a green hydrogen production process, pySembrane is applied to three examples to show how to utilize pySembrane in actual problems, as shown in Figure ref{fig:CasestudiesScheme}.
+In recent years, there has been significant interest in green hydrogen, owing to its potential as an environmentally friendly alternative to traditional fuels  cite{ChristenseN2006}. Simultaneously, green ammonia (NH$_3$) is gaining considerable attention as a transportation medium for hydrogen (H$_2$) cite{Lamb2019a, ga2024economic}. Given that NH$_3$ already possesses well-established infrastructure for production, transportation, and storage, green H$_2$ generated from regions abundant in renewable energy sources, such as Australia, Saudi Arabia, Chile, and Argentina, can be efficiently transported over long distances to global markets in the form of NH$_3$, as illustrated in Figure ref{fig:CasestudiesScheme}(a) cite{Morlanes2021}. Ensuring the high purity of H$_2$ post-decomposition of transported green NH$_3$ is crucial to meet the required purity standards for various applications. Among the various technologies for refining H$_2$, the membrane-based gas separation process is in the spotlight for light gas separation owing to advantages such as high energy efficiency and ease of operation cite{adhikari2006hydrogen, chae2022present}. However, due to significant performance variations in the membrane process depending on the material, selecting the optimal membrane requires thorough evaluation cite{lv2022tailoring}. Thus, across the three examples, membrane materials undergo evaluation through stages—single metric, optimization, and plant scale—to ultimately determine the optimal MOF membrane for green H$_2$ separation.</p>
+<p>In the first example, potential MOFs were selected based on the process performance of the numerous MOFs. Molecular and molecular dynamic simulations were performed to derive the membrane properties of each MOF, and then MOFs with purity exceeding 99.9% were selected through the membrane process simulation. In the second example, the potential MOF selected in the previous step was analyzed in greater depth via process optimization. Given that both product purity and economic viability vary with process variables, the optimal MOF was identified by determining the best process conditions through economic analysis and optimization. In the last example, the performance of the best MOF selected in the previous step was analyzed at the plant scale. The plant-scale model, developed using Aspen Plus commercial software, was integrated with the membrane process model to evaluate the impact of process conditions on both the membrane process and the final product.</p>
+<hr class="docutils" />
+<p><strong>Database and pre-screening</strong></p>
+<p>To find the most promising MOF, CoRE MOF 2019 database cite{chung2019advances}, which contains 12,020 MOFs, was analyzed for membrane materials. Out of these MOFs, 450 were excluded because of the absence of structure files (.cif) required for subsequent molecular simulations. The database provides structural properties of MOFs such as accessible surface area (ASA_m2_cm3), void fraction (AV_VF), the largest cavity diameter (LCD), pore limiting diameter (PLD), largest sphere along the free path (LFPD), and volume (cm3_g), among others. The distribution and correlations of each property are depicted in Figure ref{fig:CoREMOFvariables}.</p>
+<a class="reference internal image-reference" href="_images/CoREMOFvariables.png"><img alt="CoREMOFvariables" class="align-center" src="_images/CoREMOFvariables.png" style="width: 500px;" /></a>
+<p>Before evaluating MOFs as membrane materials through three examples, pre-screening is carried out for efficient assessment. Pre-screening consists of three stages: removal of inconsistent structures, elimination of MOFs containing precious metals, and structural-based screening. Initially, MOFs with disordered structures or containing precious metals were excluded. Disordered MOFs need to be removed since they represent physically implausible structures, despite being listed in the database. Secondly, MOFs containing precious metals were eliminated due to their impracticality in large-scale industrial applications, as their high costs render them unsuitable. Table ref{tab:PreciousMetals} lists excluded precious metals cite{ga2024multidisciplinary}. Lastly, the pore limiting diameter (PLD) represents the smallest pore diameter of a material, and if the PLD is smaller than the gas molecules, these gas molecules cannot penetrate the pores. As PLD is the most fundamental physical characteristic of a membrane, initial screening should be based on PLD values. In three examples, since the objective is to permeate the N$_2$/H$_2$ mixture through the membrane, the diameter of N$_2$ was selected as the threshold. Consequently, 6,086 MOFs with a PLD $ge$ 3.31 were screened for further analysis.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Chemical Symbols</p></th>
+<th class="head"><p>Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Au</p></td>
+<td><p>Gold</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ag</p></td>
+<td><p>Silver</p></td>
+</tr>
+<tr class="row-even"><td><p>Pt</p></td>
+<td><p>Platinum</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pd</p></td>
+<td><p>Palladium</p></td>
+</tr>
+<tr class="row-even"><td><p>Ru</p></td>
+<td><p>Ruthenium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rh</p></td>
+<td><p>Rhodium</p></td>
+</tr>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>Yttrium</p></td>
+</tr>
+<tr class="row-odd"><td><p>In</p></td>
+<td><p>Indium</p></td>
+</tr>
+<tr class="row-even"><td><p>Hf</p></td>
+<td><p>Hafnium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ga</p></td>
+<td><p>Galliu</p></td>
+</tr>
+<tr class="row-even"><td><p>Dy</p></td>
+<td><p>Dysprosium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pr</p></td>
+<td><p>Praseodymium</p></td>
+</tr>
+<tr class="row-even"><td><p>Te</p></td>
+<td><p>Tellurium</p></td>
+</tr>
+<tr class="row-odd"><td><p>U</p></td>
+<td><p>Uranium</p></td>
+</tr>
+<tr class="row-even"><td><p>Se</p></td>
+<td><p>Selenium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mo</p></td>
+<td><p>Molybdenum</p></td>
+</tr>
+<tr class="row-even"><td><p>Sm</p></td>
+<td><p>Samarium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nd</p></td>
+<td><p>Neodymium</p></td>
+</tr>
+<tr class="row-even"><td><p>Pr</p></td>
+<td><p>Praseodymium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gd</p></td>
+<td><p>Gadolinium</p></td>
+</tr>
+<tr class="row-even"><td><p>Ir</p></td>
+<td><p>Iridium</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eu</p></td>
+<td><p>Europium</p></td>
+</tr>
+<tr class="row-even"><td><p>La</p></td>
+<td><p>Lanthanum</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tb</p></td>
+<td><p>Terbium</p></td>
+</tr>
+<tr class="row-even"><td><p>Tm</p></td>
+<td><p>Thulium</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SimulAnalyzer.html" class="btn btn-neutral float-left" title="Process simulation and results analysis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Example1.html" class="btn btn-neutral float-right" title="Example 1: Numerous membrane screening" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, NahyeonAn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

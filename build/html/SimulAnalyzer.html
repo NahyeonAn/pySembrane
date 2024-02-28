@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process simulation and results analysis module &mdash; pySembrane 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="Examples.html" />
+    <link rel="prev" title="Property calculation module" href="Calculator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #FFFFFF" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/pySembraneMain.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pySembrane.html">pySembrane</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Calculator.html">Property calculation module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Process simulation and results analysis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#column-design">1. Column design</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#membrane-property-setting">2. Membrane property setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adsorbent-information">3. Adsorbent information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mass-transfer-information">4. Mass transfer information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boundary-condition-setting">5. Boundary condition setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initial-condition-setting">6. Initial condition setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-run">7. Simulation run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#results-analysis">8. Results analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pySembrane.simulator">Class documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simulator-module"><code class="xref py py-mod docutils literal notranslate"><span class="pre">simulator</span></code> module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#theory">Theory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mathematical-model-for-membrane-process">Mathematical model for membrane process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iterative-algorithm-for-closed-end-system">Iterative algorithm for closed-end system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#techno-economic-analysis-of-membrane-process">Techno-economic analysis of membrane process</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Validation.html">Validation of pySembrane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQs.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Citation.html">Citation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #FFFFFF" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pySembrane</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="pySembrane.html">pySembrane</a></li>
+      <li class="breadcrumb-item active">Process simulation and results analysis module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SimulAnalyzer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="process-simulation-and-results-analysis-module">
+<h1>Process simulation and results analysis module<a class="headerlink" href="#process-simulation-and-results-analysis-module" title="Permalink to this heading"></a></h1>
+<p>The process simulation module features seven functions designed to define the hollow fiber membrane module and perform process simulation. Given the variety of parameters required for membrane process simulation, six functions are provided to facilitate easy input by categorizing them by feature. Additionally, the results analysis module features three functions designed to analyze and visualize the results obtained from the process simulation module.</p>
+<p>First, import module into Python after installation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Package import</span>
+<span class="kn">from</span> <span class="nn">pySembrane.simulator</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Then users need to 7-steps to simulate, and additional two functions are used for results analysis.</dt><dd><ol class="arabic simple">
+<li><p>Column design</p></li>
+<li><p>Membrane property setting</p></li>
+<li><p>Gas property information</p></li>
+<li><p>Mass transfer information</p></li>
+<li><p>Boundary condition setting</p></li>
+<li><p>Initial condition setting</p></li>
+<li><p>Simulation run</p></li>
+<li><p>Results analysis</p></li>
+</ol>
+</dd>
+</dl>
+<p>In next section, detailed steps are explained.</p>
+<hr class="docutils" />
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="column-design">
+<h3>1. Column design<a class="headerlink" href="#column-design" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_component</span> <span class="o">=</span> <span class="mi">4</span>               <span class="c1"># number of gas components</span>
+<span class="n">configureation</span> <span class="o">=</span> <span class="s1">&#39;CTFS&#39;</span>       <span class="c1"># module configureation (Counter-current / feed-shell side)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">0.6</span><span class="o">*</span><span class="mf">1e3</span>                   <span class="c1"># fiber length (mm)</span>
+<span class="n">D_module</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="mf">1e3</span>            <span class="c1"># Module diameter (mm)</span>
+<span class="n">N_fiber</span> <span class="o">=</span> <span class="mi">60000</span>               <span class="c1"># number of fiber (-)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>                      <span class="c1"># number of nodes (-)</span>
+
+<span class="n">Mem_proc</span> <span class="o">=</span> <span class="n">MembraneProc</span><span class="p">(</span><span class="n">configureation</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">D_module</span><span class="p">,</span> <span class="n">N_fiber</span><span class="p">,</span>
+                        <span class="n">n_component</span><span class="p">,</span> <span class="n">n_node</span> <span class="o">=</span> <span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Mem_proc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="membrane-property-setting">
+<h3>2. Membrane property setting<a class="headerlink" href="#membrane-property-setting" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.60e-11</span><span class="p">,</span> <span class="mf">6.96e-12</span><span class="p">,</span> <span class="mf">5.33e-13</span><span class="p">,</span> <span class="mf">6.67e-13</span><span class="p">])</span> <span class="c1">#Permeance(mol/(mm2 bar s))</span>
+<span class="n">D_inner</span> <span class="o">=</span> <span class="mi">200</span><span class="o">*</span><span class="mf">1e-3</span>            <span class="c1"># Membrane inner diameter (mm)</span>
+<span class="n">D_outer</span> <span class="o">=</span> <span class="mi">250</span><span class="o">*</span><span class="mf">1e-3</span>            <span class="c1"># Membrane outer diameter (mm)</span>
+
+<span class="n">Mem_proc</span><span class="o">.</span><span class="n">membrane_info</span><span class="p">(</span><span class="n">a_i</span><span class="p">,</span> <span class="n">D_inner</span><span class="p">,</span> <span class="n">D_outer</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Mem_proc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="adsorbent-information">
+<h3>3. Adsorbent information<a class="headerlink" href="#adsorbent-information" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gas property</span>
+<span class="n">Mw_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2e-2</span><span class="p">,</span> <span class="mf">44e-3</span><span class="p">,</span> <span class="mf">16e-3</span><span class="p">,</span> <span class="mf">28e-3</span><span class="p">])</span>                 <span class="c1"># molar weight (kg/mol)</span>
+<span class="n">rho_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.08988</span><span class="p">,</span> <span class="mf">1.98</span><span class="p">,</span> <span class="mf">0.657</span><span class="p">,</span> <span class="mf">1.14</span> <span class="p">])</span><span class="o">*</span><span class="mf">1e-9</span>         <span class="c1"># density (kg/mm3)</span>
+<span class="n">mu_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.94e-5</span><span class="p">,</span> <span class="mf">0.0155e-3</span><span class="p">,</span> <span class="mf">0.011e-3</span><span class="p">,</span> <span class="mf">1.83567e-5</span><span class="p">])</span>  <span class="c1"># viscosity (Pa s)</span>
+
+<span class="n">Mem_proc</span><span class="o">.</span><span class="n">gas_prop_info</span><span class="p">(</span><span class="n">Mw_i</span><span class="p">,</span> <span class="n">mu_i</span><span class="p">,</span> <span class="n">rho_i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Mem_proc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="mass-transfer-information">
+<h3>4. Mass transfer information<a class="headerlink" href="#mass-transfer-information" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mass transfer property</span>
+<span class="n">k_mass</span> <span class="o">=</span> <span class="mf">1e-1</span>              <span class="c1"># Mass transfer coeff. (mm/s)</span>
+<span class="n">Mem_proc</span><span class="o">.</span><span class="n">mass_trans_info</span><span class="p">(</span><span class="n">k_mass</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Mem_proc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="boundary-condition-setting">
+<h3>5. Boundary condition setting<a class="headerlink" href="#boundary-condition-setting" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boundary conditions</span>
+<span class="n">P_feed</span> <span class="o">=</span> <span class="mi">20</span>                                    <span class="c1"># pressure of feed side (bar)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">313.15</span>                                     <span class="c1"># temperature (K)</span>
+<span class="n">F_feed</span> <span class="o">=</span> <span class="mf">0.03</span>                                  <span class="c1"># feed flow rate (mol/s)</span>
+<span class="n">y_feed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">])</span>     <span class="c1"># mole fraction (H2, CO2, CH4, CO)</span>
+
+<span class="n">Mem_proc</span><span class="o">.</span><span class="n">boundaryC_info</span><span class="p">(</span><span class="n">y_feed</span><span class="p">,</span> <span class="n">P_feed</span><span class="p">,</span> <span class="n">F_feed</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Mem_proc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="initial-condition-setting">
+<h3>6. Initial condition setting<a class="headerlink" href="#initial-condition-setting" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial condition</span>
+<span class="n">Mem_proc</span><span class="o">.</span><span class="n">initialC_info</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Mem_proc</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="simulation-run">
+<h3>7. Simulation run<a class="headerlink" href="#simulation-run" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">Mem_proc</span><span class="o">.</span><span class="n">run_mem</span><span class="p">()</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">Mem_proc</span><span class="o">.</span><span class="n">MassBalance</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="results-analysis">
+<h3>8. Results analysis<a class="headerlink" href="#results-analysis" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Economic analysis parameters</span>
+<span class="n">MODP</span> <span class="o">=</span> <span class="mi">10</span><span class="o">/</span><span class="mi">1000000</span>       <span class="c1"># Total membrane module cost (USD/ft2)</span>
+<span class="n">mem_life</span> <span class="o">=</span> <span class="mi">4</span>            <span class="c1"># membrane life (years)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">5</span>                   <span class="c1"># project year (yr)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.1</span>                 <span class="c1"># interest rate (%)</span>
+<span class="n">R_gas</span> <span class="o">=</span> <span class="mf">8.314</span>           <span class="c1"># Gas constant (J/K mol)</span>
+<span class="n">h_ratio</span> <span class="o">=</span> <span class="mf">1.4</span>           <span class="c1"># Heat capacity ratio (-)</span>
+<span class="n">effi_ref</span> <span class="o">=</span> <span class="mf">0.8</span>          <span class="c1"># compressor efficiency (-)</span>
+
+<span class="c1"># total annual cost</span>
+<span class="n">TAC</span> <span class="o">=</span> <span class="n">Mem_proc</span><span class="o">.</span><span class="n">CalculTAC</span><span class="p">(</span><span class="n">MODP</span><span class="p">,</span> <span class="n">mem_life</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">h_ratio</span><span class="p">,</span> <span class="n">effi_ref</span><span class="p">)</span>   <span class="c1"># USD/yr</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">TAC</span><span class="p">,</span> <span class="s1">&#39;USD/yr&#39;</span><span class="p">)</span>
+
+<span class="c1"># energy consumption</span>
+<span class="n">E_comp</span> <span class="o">=</span> <span class="n">Mem_proc</span><span class="o">.</span><span class="n">_CalculCompr</span><span class="p">(</span><span class="n">h_ratio</span><span class="p">,</span> <span class="n">effi_ref</span><span class="p">)</span>       <span class="c1"># kW</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">E_comp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;kW&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Mem_proc</span><span class="o">.</span><span class="n">PlotResults</span><span class="p">(</span><span class="n">component</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{H_2}</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">{CO_2}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{CH_4}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{CO}</span><span class="s1">&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="module-pySembrane.simulator">
+<span id="class-documentation"></span><h2>Class documentation<a class="headerlink" href="#module-pySembrane.simulator" title="Permalink to this heading"></a></h2>
+<section id="simulator-module">
+<h3><code class="xref py py-mod docutils literal notranslate"><span class="pre">simulator</span></code> module<a class="headerlink" href="#simulator-module" title="Permalink to this heading"></a></h3>
+<p>This module define the hollow fiber membrane module and perform and analyze process simulation.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this heading"></a></h2>
+<section id="mathematical-model-for-membrane-process">
+<h3>Mathematical model for membrane process<a class="headerlink" href="#mathematical-model-for-membrane-process" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/SystemDes.png"><img alt="SystemDes" class="align-center" src="_images/SystemDes.png" style="width: 700px;" /></a>
+<p>The amount of material permeating through the membrane is governed by the difference of partial pressure between the feed and retentate sides as follows:</p>
+<div class="math notranslate nohighlight">
+\[J_{i} = a_{i}\left(P_{f,i}-P_{p,i}\right) \ \mbox{where} \ P_{k,i} = y_{k,i}P_{k} \ \ \mbox{for} \ k=f \  \mbox{or} \ p\]</div>
+<p>where <span class="math notranslate nohighlight">\(J_{i}\)</span>, <span class="math notranslate nohighlight">\(a_{i}\)</span> and <span class="math notranslate nohighlight">\(P_{i}\)</span> denote the permeate flux, membrane permeance, and gas pressure for component <span class="math notranslate nohighlight">\(i\)</span>, and subscript <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(p\)</span> mean feed and permeate side, respectively. Partial pressure for each side is determined by Dalton’s law, where <span class="math notranslate nohighlight">\(y_{i}\)</span> and <cite>P</cite> stands for the molar fraction of component <span class="math notranslate nohighlight">\(i\)</span> and the total pressure of each side.
+The component balance for each feed and permeate side is expressed as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{dF_{f,i}}{dz} = -J_{i}W_{int} \\\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{dF_{p,i}}{dz} = \begin{cases} J_{i}W_{int} \ \ \ \ \ \mbox{for co-current}\\
+                        -J_{i}W_{int} \quad \mbox{for counter-current}
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[W_{int}=\pi d_{o}N\]</div>
+<div class="math notranslate nohighlight">
+\[y_{k,i} = \frac{F_{k,i}}{\sum_{i}F_{k,i}} \ \ \mbox{for} \ k=f \  \mbox{or} \ p\]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(W_{int}\)</span>, <span class="math notranslate nohighlight">\(d_{o}\)</span>, and <span class="math notranslate nohighlight">\(N\)</span> refer to the molar flowrate, the interfacial membrane width, the outer diameter of the hollow fiber membrane, and the total number of fibers, respectively. By solving Eqs. (ref{eq:componentBalance_Ff}) and (ref{eq:componentBalance_Fp}), axial molar flowrates could be obtained. The molar fraction of each component is calculated using Eq. (ref{eq:molefraction}).
+Axial pressure variations are accounted for via pressure drop equations derived from the Hagen-Poiseuille equation for ideal gases, as shown in Eqs. (ref{eq:deltaP_Feedshell}) and (ref{eq:deltaP_Feedtube}).</p>
+<p>Shell-side pressure drop</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP_f}{dz} = -\frac{192ND_o(D_m+ND_o)RT\mu_m}{\pi (D^{2}_{m}-ND^{2}_{o})^3P_f}F_{f}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{dP_p}{dz} = \frac{128RT\mu_m}{\pi D^{4}_{i}NP_p}F_{p}\]</div>
+<p>Tube-side pressure drop</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP_f}{dz} = -\frac{128RT\mu_m}{\pi D^{4}_{i}NP_f}F_{f}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{dP_p}{dz} = \frac{192ND_o(D_m+ND_o)RT\mu_m}{\pi (D^{2}_{m}-ND^{2}_{o})^3P_p}F_{p}\]</div>
+<p>A set of ordinary differential equations in Eqs. (ref{eq:flux})-(ref{eq:deltaP_Feedtube}) and pressure drop equations are solved using the following boundary conditions. For the feed stream, inlet conditions (at z = 0) are given:</p>
+<div class="math notranslate nohighlight">
+\[P_{f} = P_{f}^{in} \ \mbox{at} \ z=0\]</div>
+<div class="math notranslate nohighlight">
+\[F_{f,i} = y_{f,i}^{in}F_{f}^{in} \ \mbox{at} \ z=0\]</div>
+<p>where superscript <span class="math notranslate nohighlight">\(in\)</span> stands for the inlet condition for each factor. The derivative of the permeate flow rate is provided for each condition. For the co-current system without sweep gas, the flow rate of the permeate side equals the product of permeate flux and interfacial width for each component. Meanwhile, if the system contains sweep gas, the flow rate at the endpoint is the same with sweep gas (<span class="math notranslate nohighlight">\(F_{sw}\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{p,i} = \begin{cases} J_{i}W_{int} \ \ \ \ \ \mbox{without sweep gas}\\
+                        F_{sw,i} \quad \mbox{with sweep gas}
+\end{cases}\end{split}\]</div>
+<p>On the other hand, the permeate flow rate at the exit (at z = 0) for the counter-current system is the integration of permeate flux along the axial direction, as follows:</p>
+<div class="math notranslate nohighlight">
+\[F_{p,i} = \int_{z=0}^{z=L}J_{i}W_{int}dz + F_{sw,i}\ \ \mbox{at} \ z=0 \ \mbox{for counter-current}\]</div>
+<p>Based on the assumption that the membrane process is modeled without a vacuum pump, permeate pressures at the exit could be assumed to be atmospheric, 1 atm, as follows:</p>
+<div class="math notranslate nohighlight">
+\[P_{p} = 1 \mbox{atm}\ \ \mbox{at} \ z=L \ \mbox{for co-current}\]</div>
+<div class="math notranslate nohighlight">
+\[P_{p} = 1 \mbox{atm}\ \ \mbox{at} \ z=0 \ \mbox{for counter-current}\]</div>
+</section>
+<section id="iterative-algorithm-for-closed-end-system">
+<h3>Iterative algorithm for closed-end system<a class="headerlink" href="#iterative-algorithm-for-closed-end-system" title="Permalink to this heading"></a></h3>
+<a class="reference internal image-reference" href="_images/IterativeAlgorithm.png"><img alt="IterativeAlgorithm" class="align-center" src="_images/IterativeAlgorithm.png" style="width: 700px;" /></a>
+<p>The membrane separation process is defined by Eqns. (ref{eq:flux})–(ref{eq:deltaP_Feedtube}) is converted to algebraic equations through the finite difference method (FDM), and equations are solved by applying boundary conditions (Eqns. (ref{eq:BoundaryCondition_Ff})–(ref{eq:BoundaryCondition_Pp})). Notably, the permeate side requires an iterative procedure to apply the boundary condition and solve differential equations simultaneously cite{gu2022mathematical}. Through the iterative method, <span class="math notranslate nohighlight">\(F_{p,i}\)</span> and <span class="math notranslate nohighlight">\(P_p\)</span> for the co-current mode, and <span class="math notranslate nohighlight">\(F_{p,i}\)</span> for the counter-current can be obtained for boundary conditions. Figure ref{fig:IterativeAlgorithm} shows the algorithm for deriving unknown variables in each flow mode, involving a sequence of solving ODEs, calculating errors, and modifying boundary conditions. The iteration concludes when the sum of errors meets predefined criteria.</p>
+<p>Before starting the algorithm, the initial boundary condition of the permeate side is established through guessing, varying based on the flow mode. Specifically, the initial values of <span class="math notranslate nohighlight">\(F_{p,i}\)</span> and <span class="math notranslate nohighlight">\(P_p\)</span> for the co-current mode was set to 10:sub:<cite>-6</cite> mol/s and 1.01 bar, respectively. For the counter-current mode, the initial value for <span class="math notranslate nohighlight">\(F_{p,i}\)</span> is set to 0.05:math:<cite>F_{f,i}</cite>. After solving the ODEs with the given boundary conditions, the flow rate for each side and gas component and the total pressure for each side are determined. Using the results, the relative error for each variable is computed by the following equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}e_{i} = \begin{cases} \frac{\left( F_{p,i}^{in}-J_{i}W_{int}\Delta z\right)}{F_{p,i}^{in}}  \quad \quad \ \mbox{for co-current}\\
+                    \frac{\left( F_{p,i}^{in}-\sum_{z} J_{i}W_{int}\Delta z\right)}{F_{p,i}^{in}} \quad \mbox{for counter-current}
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[e_{p} = \frac{\left(P_{p}^{in}-1 atm\right)}{P_{p}^{in}}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(e_{i}\)</span> represents the flow rate error of component <span class="math notranslate nohighlight">\(i\)</span>, calculated by comparing the given boundary condition with the flow rate derived through flux at <span class="math notranslate nohighlight">\(z=0\)</span>. The pressure error (<span class="math notranslate nohighlight">\(e_{p}\)</span>) for the co-current mode is obtained by comparing the permeate side pressure with 1 bar, the boundary condition set at the outlet <span class="math notranslate nohighlight">\(z=L\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{e} = \sum |e_i| + |e_p|\]</div>
+<p>If the sum of the errors (<span class="math notranslate nohighlight">\(\mathbf{e}\)</span>) falls below the predefined criteria, the computation process is terminated. Conversely, if the error surpasses the specified criteria, each variable is adjusted using the following equations:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}^{new} = \mathbf{x}^{old}+\kappa e\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> refers to unknown variables, including <span class="math notranslate nohighlight">\(F_{p,i}\)</span>, and <span class="math notranslate nohighlight">\(P_p\)</span> at <span class="math notranslate nohighlight">\(z=0\)</span>. <span class="math notranslate nohighlight">\(\kappa\)</span> is a weight factor given by the user and takes a floating-point value between 0 and 1. This parameter allows a balance between convergence speed and computation stability. To elaborate, if <span class="math notranslate nohighlight">\(\kappa\)</span> is too large, it could converge fast, but stability may decrease. In contrast, a smaller <span class="math notranslate nohighlight">\(\kappa\)</span> may ensure stable convergence but at the cost of increased computation time due to a higher number of iterations. Using this user-defined parameter, users could adjust the trade-off between convergence speed and stability in their simulations with flexibility.</p>
+</section>
+<section id="techno-economic-analysis-of-membrane-process">
+<h3>Techno-economic analysis of membrane process<a class="headerlink" href="#techno-economic-analysis-of-membrane-process" title="Permalink to this heading"></a></h3>
+<p>In the results analysis module of pySembrane, the total annual cost (TAC) of membrane-based separation processes can be determined using the mintinline{python}{CalculTAC} function to analyze their economic feasibility. Table  lists the procedure for calculating TAC cite{ahmad2015hollow, jeong2024novel}. TAC serves as a fundamental result for economic evaluations and can be extended for profitability analysis based on production cost per unit product or revenue from the product. The mintinline{python}{CalculTAC} function computes the total capital investment (TCI) and total production cost (TPC) based on results from the process simulation module and user-input economic parameters, ultimately returning the TAC. TCI represents the sum of capital investments in the process, including installation costs for membrane modules and multistage compressor units, startup expenses, etc. The membrane module cost (MC) is derived from the membrane area obtained from membrane process design specifications multiplied by the user-input unit membrane cost. Additionally, the membrane replacement cost (MRC) is calculated based on MC, assuming replacement of 50 % of the membrane area every membrane life which is specified by the user. The compressor work and installed compressor cost (CC) for the multistage compressor unit are determined using the mintinline{python}{_CalculCompr} function within the module, considering the feed pressure in the membrane process to determine the number of compressors and using user-input heat capacity ratios and compressor efficiency. Compressor work is multiplied by unit electricity cost to compute utility cost (UC). The calculated TCI is converted into the equivalent annual cost (EAC) using the project year and interest rate to derive the annuity factor (AF), which divides TCI to obtain EAC.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>Total capital investment (TCI)</strong></p></td>
+<td><p><strong>TCI=TFI+SC</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Membrane module cost(MC)</p></td>
+<td><p>$5/ft</p></td>
+</tr>
+<tr class="row-odd"><td><p>Installed compressor cost(CC)</p></td>
+<td><p>$8650*(W_{cp} /h_{cp} )^{η}</p></td>
+</tr>
+<tr class="row-even"><td><p>Fixed cost(FC)</p></td>
+<td><p>MC+CC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Base plant cost(BPC)</p></td>
+<td><p>1.12*FC</p></td>
+</tr>
+<tr class="row-even"><td><p>Project contingency(PC)</p></td>
+<td><p>0.20*BPC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total facilities investment(TFI)</p></td>
+<td><p>BPC+PC</p></td>
+</tr>
+<tr class="row-even"><td><p>Start up cost(SC)</p></td>
+<td><p>0.23*FC</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total production cost (TPC)</strong></p></td>
+<td><p><strong>TPC=CMC+LTI+DL+LOC+MRC+UC</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Contract &amp; material maintenance cost(CMC)</p></td>
+<td><p>0.015*TFI</p></td>
+</tr>
+<tr class="row-odd"><td><p>Local taxes and insurance(LTI)</p></td>
+<td><p>0.015*TFI</p></td>
+</tr>
+<tr class="row-even"><td><p>Direct labor cost(DL)</p></td>
+<td><p>0.59*TFI</p></td>
+</tr>
+<tr class="row-odd"><td><p>Labor overhead cost(LOC)</p></td>
+<td><p>1.15*DL</p></td>
+</tr>
+<tr class="row-even"><td><p>Membrane replacement costs(MRC)</p></td>
+<td><p>0.5*MC/t</p></td>
+</tr>
+<tr class="row-odd"><td><p>Utility cost(UC)</p></td>
+<td><p>$0.071/kwh</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total annual cost (TAC)</strong></p></td>
+<td><p><strong>TAC=EAC+TPC</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Annuity factor(AF)</p></td>
+<td><p><span class="math notranslate nohighlight">\((1-(1+r)^{−yr})/r\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Equivalent annual cost(EAC)</p></td>
+<td><p>TCI/AF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Membrane life(t)</p></td>
+<td><p>4 years</p></td>
+</tr>
+<tr class="row-even"><td><p>Compressor efficiency(h_{cp} )</p></td>
+<td><p>0.8</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Calculator.html" class="btn btn-neutral float-left" title="Property calculation module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, NahyeonAn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
