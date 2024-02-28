@@ -54,6 +54,12 @@ The validation of the proposed pySembrane was established through a comparative 
 The validation results are presented in Figure \ref{fig:ValidationError} and Table \ref{tab:ValidationResults}. In comparisons with ChemBrane, all scenarios—except for the permeate flow in scenario 3—showed errors below 5\%, indicating a strong similarity. Notably, the permeate flow in scenario 3 displayed a 12.48\% difference, because ChemBrane could not consider pressure drop in the system, unlike pySembrane. For Scenario 3, as the feed pressure decreases to 15 bar, the difference between the results of ChemBrane and pySembrane magnifies due to sensitivity to pressure drop. Additionally, while pySembrane exhibited an error exceeding 5\% in scenario 4, the results closely align with those reported in the literature, as demonstrated in the Figures \ref{fig:ValidationError} (b) and (c). This is because the measured value of permeate flow was too small, so the relative error reacts sensitively to little differences. On the other hand, in the overall comparison with the literature, the error was generally less than 5\%. This finding highlights how pySembrane provides results consistent with previous research, demonstrating its reliability.
 
 
+.. image:: images/ValidationError.png
+  :width: 700
+  :alt: ValidationError
+  :align: center
+
+
 +----------------+-----------------------+----------------------------+------------------------+------------------------------+
 |                | Permeate flow (mol/s) | Permeate CO2 purity (mol%) | Retentate flow (mol/s) | Retentate CH4 purity (mol%)  |
 +================+=======================+============================+========================+==============================+
@@ -88,10 +94,5 @@ The validation results are presented in Figure \ref{fig:ValidationError} and Tab
 |Difference (%)  |                  0.47 |                       0.18 |                  -0.11 |                        0.16  |
 +----------------+-----------------------+----------------------------+------------------------+------------------------------+
 
-
-.. image:: images/ValidationError.png
-  :width: 700
-  :alt: ValidationError
-  :align: center
 
 ---------
