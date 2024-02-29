@@ -57,7 +57,7 @@ Usage
     print(Mem_proc)
 
 
-3. Adsorbent information
+3. Gas property information 
 ''''''''''''''''''''''''''''''''''''''''''''''
 
 .. code-block:: python
@@ -157,13 +157,6 @@ Theory
 Mathematical model for membrane process
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-.. image:: images/SystemDes.png
-  :width: 700
-  :alt: SystemDes
-  :align: center
-
-
-The amount of material permeating through the membrane is governed by the difference of partial pressure between the feed and retentate sides as follows: 
 
 .. math::
 
@@ -258,14 +251,17 @@ Based on the assumption that the membrane process is modeled without a vacuum pu
 Iterative algorithm for closed-end system
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-.. image:: images/IterativeAlgorithm.png
-  :width: 700
-  :alt: IterativeAlgorithm
+.. figure:: images/IterativeAlgorithm.png
   :align: center
+  :width: 700
+  :name: test
 
-The membrane separation process is defined by Eqns. (\ref{eq:flux})--(\ref{eq:deltaP_Feedtube}) is converted to algebraic equations through the finite difference method (FDM), and equations are solved by applying boundary conditions (Eqns. (\ref{eq:BoundaryCondition_Ff})--(\ref{eq:BoundaryCondition_Pp})). Notably, the permeate side requires an iterative procedure to apply the boundary condition and solve differential equations simultaneously \cite{gu2022mathematical}. Through the iterative method, :math:`F_{p,i}` and :math:`P_p` for the co-current mode, and :math:`F_{p,i}` for the counter-current can be obtained for boundary conditions. Figure \ref{fig:IterativeAlgorithm} shows the algorithm for deriving unknown variables in each flow mode, involving a sequence of solving ODEs, calculating errors, and modifying boundary conditions. The iteration concludes when the sum of errors meets predefined criteria.
+  A numerical algorithm proposed in this study.
 
-Before starting the algorithm, the initial boundary condition of the permeate side is established through guessing, varying based on the flow mode. Specifically, the initial values of :math:`F_{p,i}` and :math:`P_p` for the co-current mode was set to 10:sub:`-6` mol/s and 1.01 bar, respectively. For the counter-current mode, the initial value for :math:`F_{p,i}` is set to 0.05:math:`F_{f,i}`. After solving the ODEs with the given boundary conditions, the flow rate for each side and gas component and the total pressure for each side are determined. Using the results, the relative error for each variable is computed by the following equations:
+
+The membrane separation process is defined by Eqns. (\ref{eq:flux})--(\ref{eq:deltaP_Feedtube}) is converted to algebraic equations through the finite difference method (FDM), and equations are solved by applying boundary conditions (Eqns. (\ref{eq:BoundaryCondition_Ff})--(\ref{eq:BoundaryCondition_Pp})). Notably, the permeate side requires an iterative procedure to apply the boundary condition and solve differential equations simultaneously. Through the iterative method, :math:`F_{p,i}` and :math:`P_p` for the co-current mode, and :math:`F_{p,i}` for the counter-current can be obtained for boundary conditions. The figure above shows the algorithm for deriving unknown variables in each flow mode, involving a sequence of solving ODEs, calculating errors, and modifying boundary conditions. The iteration concludes when the sum of errors meets predefined criteria.
+
+Before starting the algorithm, the initial boundary condition of the permeate side is established through guessing, varying based on the flow mode. Specifically, the initial values of :math:`F_{p,i}` and :math:`P_p` for the co-current mode was set to 10:sup:`-6` mol/s and 1.01 bar, respectively. For the counter-current mode, the initial value for :math:`F_{p,i}` is set to 0.05:math:`F_{f,i}`. After solving the ODEs with the given boundary conditions, the flow rate for each side and gas component and the total pressure for each side are determined. Using the results, the relative error for each variable is computed by the following equations: :numref:`test`
 
 .. math::
 
@@ -294,7 +290,10 @@ Here, :math:`\mathbf{x}` refers to unknown variables, including :math:`F_{p,i}`,
 
 Techno-economic analysis of membrane process
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-In the results analysis module of pySembrane, the total annual cost (TAC) of membrane-based separation processes can be determined using the \mintinline{python}{CalculTAC} function to analyze their economic feasibility. Table  lists the procedure for calculating TAC \cite{ahmad2015hollow, jeong2024novel}. TAC serves as a fundamental result for economic evaluations and can be extended for profitability analysis based on production cost per unit product or revenue from the product. The \mintinline{python}{CalculTAC} function computes the total capital investment (TCI) and total production cost (TPC) based on results from the process simulation module and user-input economic parameters, ultimately returning the TAC. TCI represents the sum of capital investments in the process, including installation costs for membrane modules and multistage compressor units, startup expenses, etc. The membrane module cost (MC) is derived from the membrane area obtained from membrane process design specifications multiplied by the user-input unit membrane cost. Additionally, the membrane replacement cost (MRC) is calculated based on MC, assuming replacement of 50 % of the membrane area every membrane life which is specified by the user. The compressor work and installed compressor cost (CC) for the multistage compressor unit are determined using the \mintinline{python}{_CalculCompr} function within the module, considering the feed pressure in the membrane process to determine the number of compressors and using user-input heat capacity ratios and compressor efficiency. Compressor work is multiplied by unit electricity cost to compute utility cost (UC). The calculated TCI is converted into the equivalent annual cost (EAC) using the project year and interest rate to derive the annuity factor (AF), which divides TCI to obtain EAC.
+
+In the results analysis module of pySembrane, the total annual cost (TAC) of membrane-based separation processes can be determined using the :py:mod:`CalculTAC` function to analyze their economic feasibility. Table_  lists the procedure for calculating TAC. TAC serves as a fundamental result for economic evaluations and can be extended for profitability analysis based on production cost per unit product or revenue from the product. The :py:mod:`CalculTAC` function computes the total capital investment (TCI) and total production cost (TPC) based on results from the process simulation module and user-input economic parameters, ultimately returning the TAC. TCI represents the sum of capital investments in the process, including installation costs for membrane modules and multistage compressor units, startup expenses, etc. The membrane module cost (MC) is derived from the membrane area obtained from membrane process design specifications multiplied by the user-input unit membrane cost. Additionally, the membrane replacement cost (MRC) is calculated based on MC, assuming replacement of 50 % of the membrane area every membrane life which is specified by the user. The compressor work and installed compressor cost (CC) for the multistage compressor unit are determined using the :py:mod:`_CalculCompr` function within the module, considering the feed pressure in the membrane process to determine the number of compressors and using user-input heat capacity ratios and compressor efficiency. Compressor work is multiplied by unit electricity cost to compute utility cost (UC). The calculated TCI is converted into the equivalent annual cost (EAC) using the project year and interest rate to derive the annuity factor (AF), which divides TCI to obtain EAC.
+
+.. _Table:
 
 +-------------------------------------------+------------------------------+
 | **Total capital investment (TCI)**        | **TCI=TFI+SC**               |
@@ -337,3 +336,4 @@ In the results analysis module of pySembrane, the total annual cost (TAC) of mem
 +-------------------------------------------+------------------------------+
 | Compressor efficiency(h_{cp} )            | 0.8                          |
 +-------------------------------------------+------------------------------+
+

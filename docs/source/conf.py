@@ -36,12 +36,17 @@ extensions = ['sphinx.ext.autosummary',
                     'sphinx.ext.ifconfig',
                     'sphinx.ext.viewcode',
                     'sphinx.ext.githubpages',
-                    'sphinx.ext.mathjax']
+                    'sphinx.ext.mathjax',
+                    ]
 
 templates_path = ['_templates']
 exclude_patterns = []
 
+numfig = True
+numfig_secnum_depth = 0
 
+math_numfig = True
+math_eqref_format = "Eq.{number}"
 
 # -- Options for HTML output -------------------------------------------------
 

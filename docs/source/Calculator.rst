@@ -1,7 +1,7 @@
 Property calculation module
 ========================================
 
-The property calculation module features three functions designed to calculate the permeance necessary for membrane process simulation. :py:mod:`CalculPermeance` function computes permeance in units of [mol/mm`^2` bars], taking partial pressure, self-diffusivity, gas uptake, density, and membrane thickness as inputs. These input variables can be derived from experiments and computational simulations. The :py:mod:`CropMSD` function extracts molecular dynamics (MD) simulation results, presenting the mean-squared displacement over time in matrix form. Based on the MSD matrix processed through the :py:mod:`CropMSD` function, the :py:mod:`CalculSefDiff` function derives the self-diffusivity of the gas components using Einstein's relational theory. These functions empower users to effortlessly determine membrane properties without necessitating prior background knowledge. Refer to the method section for the theoretical basis employed in the module and the Supplementary Information for detailed usage of each function.
+The property calculation module features three functions designed to calculate the permeance necessary for membrane process simulation. :py:mod:`CalculPermeance` function computes permeance in units of [mol/mm:sup:`2` bar], taking partial pressure, self-diffusivity, gas uptake, density, and membrane thickness as inputs. These input variables can be derived from experiments and computational simulations. The :py:mod:`CropMSD` function extracts molecular dynamics (MD) simulation results, presenting the mean-squared displacement over time in matrix form. Based on the MSD matrix processed through the :py:mod:`CropMSD` function, the :py:mod:`CalculSefDiff` function derives the self-diffusivity of the gas components using Einstein's relational theory. These functions empower users to effortlessly determine membrane properties without necessitating prior background knowledge. Refer to the method section for the theoretical basis employed in the module and the Supplementary Information for detailed usage of each function.
 
 
 First, import the module into Python after installation.
@@ -60,7 +60,6 @@ Usage
 3. Determine self diffuvisity from MSD
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-
 .. code-block:: python
 
     # Calculate self-diffusivity using MSD
@@ -106,13 +105,29 @@ where :math:`P`, :math:`q`, :math:`\mathcal{D}`, :math:`p`, and :math:`\rho` den
 Self-diffusivity estimation from mean-squared displacement
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. image:: images/MDsimDiffusivity.png
+.. _MDsimDiffusivity:
+
+.. figure:: images/MDsimDiffusivity.png
   :width: 700
-  :alt: MDsimDiffusivity
   :align: center
 
+  Schematics of self-diffusion coefficient calculation from molecular dynamics simulation.
 
-Molecular dynamics is a computational method calculating the movements of atoms and molecules, then the evolving positions of individual molecules over time, allowing the derivation of gas molecule diffusion patterns. During this process, the molecule's position is represented as a vector in three-dimensional space (x, y, z axes). The MD simulation captures all molecules' positions through mean-squared displacement (MSDs), calculated using the Einstein formula \cite{hasan2013cost}. MSDs, rooted in Brownian motion studies, signify the average movement speed of particles. Over time, the figure demonstrates the gradual dispersion of molecules, showing an increase in average distance. Self-diffusivities (:math:`\mathcal{D}`) with the desired dimensionality can be computed by fitting MSDs over time to a linear model.
+
+Molecular dynamics is a computational method calculating the movements of atoms and molecules, then the evolving positions of individual molecules over time, allowing the derivation of gas molecule diffusion patterns. During this process, the molecule's position is represented as a vector in three-dimensional space (x, y, z axes). The MD simulation captures all molecules' positions through mean-squared displacement (MSDs), calculated using the Einstein formula. MSDs, rooted in Brownian motion studies, signify the average movement speed of particles. Over time, :numref:`MDsimDiffusivity` demonstrates the gradual dispersion of molecules, showing an increase in average distance. Self-diffusivities (:math:`\mathcal{D}`) with the desired dimensionality can be computed by fitting MSDs over time to a linear model. 
+
 
 .. math::
+
     \lim_{t \to \infty}\left< \lVert r_{i}(t)-r_{i}(0) \rVert ^{2} \right> = 6 \mathcal{D}t
+
+
+.. _systemdes:
+
+.. figure:: images/SystemDes.png
+  :width: 700
+  :align: center
+
+  Membrane module system description.
+
+The amount of material permeating through the membrane is governed by the difference of partial pressure between the feed and retentate sides as follows :numref:`systemdes` dfsdfsdf
