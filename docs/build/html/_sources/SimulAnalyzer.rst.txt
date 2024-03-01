@@ -157,6 +157,13 @@ Theory
 Mathematical model for membrane process
 ''''''''''''''''''''''''''''''''''''''''''''''
 
+.. figure:: images/SystemDes.png
+  :width: 700
+  :align: center
+
+  **Fig. 1** Membrane module system description.
+
+The amount of material permeating through the membrane is governed by the difference of partial pressure between the feed and retentate sides as follows:
 
 .. math::
 
@@ -182,12 +189,12 @@ The component balance for each feed and permeate side is expressed as follows:
     W_{int}=\pi d_{o}N
 
 .. math::
-
+  
     y_{k,i} = \frac{F_{k,i}}{\sum_{i}F_{k,i}} \ \ \mbox{for} \ k=f \  \mbox{or} \ p
+    :label: eq:sdfsdfs
 
-
-where :math:`F`, :math:`W_{int}`, :math:`d_{o}`, and :math:`N` refer to the molar flowrate, the interfacial membrane width, the outer diameter of the hollow fiber membrane, and the total number of fibers, respectively. By solving Eqs. (\ref{eq:componentBalance_Ff}) and (\ref{eq:componentBalance_Fp}), axial molar flowrates could be obtained. The molar fraction of each component is calculated using Eq. (\ref{eq:molefraction}).
-Axial pressure variations are accounted for via pressure drop equations derived from the Hagen-Poiseuille equation for ideal gases, as shown in Eqs. (\ref{eq:deltaP_Feedshell}) and (\ref{eq:deltaP_Feedtube}).
+where :math:`F`, :math:`W_{int}`, :math:`d_{o}`, and :math:`N` refer to the molar flowrate, the interfacial membrane width, the outer diameter of the hollow fiber membrane, and the total number of fibers, respectively. By solving equations, axial molar flowrates could be obtained. The molar fraction of each component is calculated using above equation.
+Axial pressure variations are accounted for via pressure drop equations derived from the Hagen-Poiseuille equation for ideal gases, as shown in Eqs. (\ref{eq:deltaP_Feedshell}) and :math:numref:`sdfsdfs`.
 
 Shell-side pressure drop
 
@@ -254,14 +261,13 @@ Iterative algorithm for closed-end system
 .. figure:: images/IterativeAlgorithm.png
   :align: center
   :width: 700
-  :name: test
 
-  A numerical algorithm proposed in this study.
+  **Fig. 2** A numerical algorithm proposed in this study.
 
 
-The membrane separation process is defined by Eqns. (\ref{eq:flux})--(\ref{eq:deltaP_Feedtube}) is converted to algebraic equations through the finite difference method (FDM), and equations are solved by applying boundary conditions (Eqns. (\ref{eq:BoundaryCondition_Ff})--(\ref{eq:BoundaryCondition_Pp})). Notably, the permeate side requires an iterative procedure to apply the boundary condition and solve differential equations simultaneously. Through the iterative method, :math:`F_{p,i}` and :math:`P_p` for the co-current mode, and :math:`F_{p,i}` for the counter-current can be obtained for boundary conditions. The figure above shows the algorithm for deriving unknown variables in each flow mode, involving a sequence of solving ODEs, calculating errors, and modifying boundary conditions. The iteration concludes when the sum of errors meets predefined criteria.
+The membrane separation process is defined by Eqns. (\ref{eq:flux})--(\ref{eq:deltaP_Feedtube}) is converted to algebraic equations through the finite difference method (FDM), and equations are solved by applying boundary conditions (Eqns. (\ref{eq:BoundaryCondition_Ff})--(\ref{eq:BoundaryCondition_Pp})). Notably, the permeate side requires an iterative procedure to apply the boundary condition and solve differential equations simultaneously. Through the iterative method, :math:`F_{p,i}` and :math:`P_p` for the co-current mode, and :math:`F_{p,i}` for the counter-current can be obtained for boundary conditions. **Fig. 2** shows the algorithm for deriving unknown variables in each flow mode, involving a sequence of solving ODEs, calculating errors, and modifying boundary conditions. The iteration concludes when the sum of errors meets predefined criteria.
 
-Before starting the algorithm, the initial boundary condition of the permeate side is established through guessing, varying based on the flow mode. Specifically, the initial values of :math:`F_{p,i}` and :math:`P_p` for the co-current mode was set to 10:sup:`-6` mol/s and 1.01 bar, respectively. For the counter-current mode, the initial value for :math:`F_{p,i}` is set to 0.05:math:`F_{f,i}`. After solving the ODEs with the given boundary conditions, the flow rate for each side and gas component and the total pressure for each side are determined. Using the results, the relative error for each variable is computed by the following equations: :numref:`test`
+Before starting the algorithm, the initial boundary condition of the permeate side is established through guessing, varying based on the flow mode. Specifically, the initial values of :math:`F_{p,i}` and :math:`P_p` for the co-current mode was set to 10:sup:`-6` mol/s and 1.01 bar, respectively. For the counter-current mode, the initial value for :math:`F_{p,i}` is set to 0.05:math:`F_{f,i}`. After solving the ODEs with the given boundary conditions, the flow rate for each side and gas component and the total pressure for each side are determined. Using the results, the relative error for each variable is computed by the following equations:
 
 .. math::
 
