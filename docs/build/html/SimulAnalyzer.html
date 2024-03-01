@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Process simulation and results analysis module &mdash; pySembrane 1.0.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -51,8 +53,8 @@
 <li class="toctree-l2"><a class="reference internal" href="Calculator.html">Property calculation module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Process simulation and results analysis module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#column-design">1. Column design</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#membrane-property-setting">2. Membrane property setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#membrane-module-design">1. Membrane module design</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#membrane-property-information">2. Membrane property information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gas-property-information">3. Gas property information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mass-transfer-information">4. Mass transfer information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#boundary-condition-setting">5. Boundary condition setting</a></li>
@@ -116,8 +118,8 @@
 </div>
 <dl class="simple">
 <dt>Then users need to 7-steps to simulate, and additional two functions are used for results analysis.</dt><dd><ol class="arabic simple">
-<li><p>Column design</p></li>
-<li><p>Membrane property setting</p></li>
+<li><p>Membrane module design</p></li>
+<li><p>Membrane property information</p></li>
 <li><p>Gas property information</p></li>
 <li><p>Mass transfer information</p></li>
 <li><p>Boundary condition setting</p></li>
@@ -131,8 +133,8 @@
 <hr class="docutils" />
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
-<section id="column-design">
-<h3>1. Column design<a class="headerlink" href="#column-design" title="Permalink to this heading"></a></h3>
+<section id="membrane-module-design">
+<h3>1. Membrane module design<a class="headerlink" href="#membrane-module-design" title="Permalink to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_component</span> <span class="o">=</span> <span class="mi">4</span>               <span class="c1"># number of gas components</span>
 <span class="n">configureation</span> <span class="o">=</span> <span class="s1">&#39;CTFS&#39;</span>       <span class="c1"># module configureation (Counter-current / feed-shell side)</span>
 <span class="n">L</span> <span class="o">=</span> <span class="mf">0.6</span><span class="o">*</span><span class="mf">1e3</span>                   <span class="c1"># fiber length (mm)</span>
@@ -147,8 +149,8 @@
 </pre></div>
 </div>
 </section>
-<section id="membrane-property-setting">
-<h3>2. Membrane property setting<a class="headerlink" href="#membrane-property-setting" title="Permalink to this heading"></a></h3>
+<section id="membrane-property-information">
+<h3>2. Membrane property information<a class="headerlink" href="#membrane-property-information" title="Permalink to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.60e-11</span><span class="p">,</span> <span class="mf">6.96e-12</span><span class="p">,</span> <span class="mf">5.33e-13</span><span class="p">,</span> <span class="mf">6.67e-13</span><span class="p">])</span> <span class="c1">#Permeance(mol/(mm2 bar s))</span>
 <span class="n">D_inner</span> <span class="o">=</span> <span class="mi">200</span><span class="o">*</span><span class="mf">1e-3</span>            <span class="c1"># Membrane inner diameter (mm)</span>
 <span class="n">D_outer</span> <span class="o">=</span> <span class="mi">250</span><span class="o">*</span><span class="mf">1e-3</span>            <span class="c1"># Membrane outer diameter (mm)</span>
@@ -264,21 +266,20 @@ The component balance for each feed and permeate side is expressed as follows:</
 <div class="math notranslate nohighlight">
 \[W_{int}=\pi d_{o}N\]</div>
 <div class="math notranslate nohighlight">
-\[y_{k,i} = \frac{F_{k,i}}{\sum_{i}F_{k,i}} \ \ \mbox{for} \ k=f \  \mbox{or} \ p
-:label: eq:sdfsdfs\]</div>
+\[y_{k,i} = \frac{F_{k,i}}{\sum_{i}F_{k,i}} \ \ \mbox{for} \ k=f \  \mbox{or} \ p\]</div>
 <p>where <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(W_{int}\)</span>, <span class="math notranslate nohighlight">\(d_{o}\)</span>, and <span class="math notranslate nohighlight">\(N\)</span> refer to the molar flowrate, the interfacial membrane width, the outer diameter of the hollow fiber membrane, and the total number of fibers, respectively. By solving equations, axial molar flowrates could be obtained. The molar fraction of each component is calculated using above equation.
-Axial pressure variations are accounted for via pressure drop equations derived from the Hagen-Poiseuille equation for ideal gases, as shown in Eqs. (ref{eq:deltaP_Feedshell}) and <code class="xref math math-numref docutils literal notranslate"><span class="pre">sdfsdfs</span></code>.</p>
-<p>Shell-side pressure drop</p>
+Axial pressure variations are accounted for via pressure drop equations derived from the Hagen-Poiseuille equation for ideal gases, as follows:</p>
+<p><strong>Shell-side pressure drop</strong></p>
 <div class="math notranslate nohighlight">
 \[\frac{dP_f}{dz} = -\frac{192ND_o(D_m+ND_o)RT\mu_m}{\pi (D^{2}_{m}-ND^{2}_{o})^3P_f}F_{f}\]</div>
 <div class="math notranslate nohighlight">
 \[\frac{dP_p}{dz} = \frac{128RT\mu_m}{\pi D^{4}_{i}NP_p}F_{p}\]</div>
-<p>Tube-side pressure drop</p>
+<p><strong>Tube-side pressure drop</strong></p>
 <div class="math notranslate nohighlight">
 \[\frac{dP_f}{dz} = -\frac{128RT\mu_m}{\pi D^{4}_{i}NP_f}F_{f}\]</div>
 <div class="math notranslate nohighlight">
 \[\frac{dP_p}{dz} = \frac{192ND_o(D_m+ND_o)RT\mu_m}{\pi (D^{2}_{m}-ND^{2}_{o})^3P_p}F_{p}\]</div>
-<p>A set of ordinary differential equations in Eqs. (ref{eq:flux})-(ref{eq:deltaP_Feedtube}) and pressure drop equations are solved using the following boundary conditions. For the feed stream, inlet conditions (at z = 0) are given:</p>
+<p>A set of ordinary differential equations and pressure drop equations are solved using the following boundary conditions. For the feed stream, inlet conditions (at z = 0) are given:</p>
 <div class="math notranslate nohighlight">
 \[P_{f} = P_{f}^{in} \ \mbox{at} \ z=0\]</div>
 <div class="math notranslate nohighlight">
@@ -305,8 +306,8 @@ Axial pressure variations are accounted for via pressure drop equations derived 
 <p><span class="caption-text"><strong>Fig. 2</strong> A numerical algorithm proposed in this study.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>The membrane separation process is defined by Eqns. (ref{eq:flux})–(ref{eq:deltaP_Feedtube}) is converted to algebraic equations through the finite difference method (FDM), and equations are solved by applying boundary conditions (Eqns. (ref{eq:BoundaryCondition_Ff})–(ref{eq:BoundaryCondition_Pp})). Notably, the permeate side requires an iterative procedure to apply the boundary condition and solve differential equations simultaneously. Through the iterative method, <span class="math notranslate nohighlight">\(F_{p,i}\)</span> and <span class="math notranslate nohighlight">\(P_p\)</span> for the co-current mode, and <span class="math notranslate nohighlight">\(F_{p,i}\)</span> for the counter-current can be obtained for boundary conditions. <strong>Fig. 2</strong> shows the algorithm for deriving unknown variables in each flow mode, involving a sequence of solving ODEs, calculating errors, and modifying boundary conditions. The iteration concludes when the sum of errors meets predefined criteria.</p>
-<p>Before starting the algorithm, the initial boundary condition of the permeate side is established through guessing, varying based on the flow mode. Specifically, the initial values of <span class="math notranslate nohighlight">\(F_{p,i}\)</span> and <span class="math notranslate nohighlight">\(P_p\)</span> for the co-current mode was set to 10:sup:<cite>-6</cite> mol/s and 1.01 bar, respectively. For the counter-current mode, the initial value for <span class="math notranslate nohighlight">\(F_{p,i}\)</span> is set to 0.05:math:<cite>F_{f,i}</cite>. After solving the ODEs with the given boundary conditions, the flow rate for each side and gas component and the total pressure for each side are determined. Using the results, the relative error for each variable is computed by the following equations:</p>
+<p>The membrane separation process is defined by equations above is converted to algebraic equations through the finite difference method (FDM), and equations are solved by applying boundary conditions. Notably, the permeate side requires an iterative procedure to apply the boundary condition and solve differential equations simultaneously. Through the iterative method, <span class="math notranslate nohighlight">\(F_{p,i}\)</span> and <span class="math notranslate nohighlight">\(P_p\)</span> for the co-current mode, and <span class="math notranslate nohighlight">\(F_{p,i}\)</span> for the counter-current can be obtained for boundary conditions. <strong>Fig. 2</strong> shows the algorithm for deriving unknown variables in each flow mode, involving a sequence of solving ODEs, calculating errors, and modifying boundary conditions. The iteration concludes when the sum of errors meets predefined criteria.</p>
+<p>Before starting the algorithm, the initial boundary condition of the permeate side is established through guessing, varying based on the flow mode. Specifically, the initial values of <span class="math notranslate nohighlight">\(F_{p,i}\)</span> and <span class="math notranslate nohighlight">\(P_p\)</span> for the co-current mode was set to 10<sup>-6</sup> mol/s and 1.01 bar, respectively. For the counter-current mode, the initial value for <span class="math notranslate nohighlight">\(F_{p,i}\)</span> is set to 0.05 <span class="math notranslate nohighlight">\(F_{f,i}\)</span>. After solving the ODEs with the given boundary conditions, the flow rate for each side and gas component and the total pressure for each side are determined. Using the results, the relative error for each variable is computed by the following equations:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}e_{i} = \begin{cases} \frac{\left( F_{p,i}^{in}-J_{i}W_{int}\Delta z\right)}{F_{p,i}^{in}}  \quad \quad \ \mbox{for co-current}\\
                     \frac{\left( F_{p,i}^{in}-\sum_{z} J_{i}W_{int}\Delta z\right)}{F_{p,i}^{in}} \quad \mbox{for counter-current}
@@ -323,8 +324,9 @@ Axial pressure variations are accounted for via pressure drop equations derived 
 </section>
 <section id="techno-economic-analysis-of-membrane-process">
 <h3>Techno-economic analysis of membrane process<a class="headerlink" href="#techno-economic-analysis-of-membrane-process" title="Permalink to this heading"></a></h3>
-<p>In the results analysis module of pySembrane, the total annual cost (TAC) of membrane-based separation processes can be determined using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">CalculTAC</span></code> function to analyze their economic feasibility. <a class="reference internal" href="#table">Table</a>  lists the procedure for calculating TAC. TAC serves as a fundamental result for economic evaluations and can be extended for profitability analysis based on production cost per unit product or revenue from the product. The <code class="xref py py-mod docutils literal notranslate"><span class="pre">CalculTAC</span></code> function computes the total capital investment (TCI) and total production cost (TPC) based on results from the process simulation module and user-input economic parameters, ultimately returning the TAC. TCI represents the sum of capital investments in the process, including installation costs for membrane modules and multistage compressor units, startup expenses, etc. The membrane module cost (MC) is derived from the membrane area obtained from membrane process design specifications multiplied by the user-input unit membrane cost. Additionally, the membrane replacement cost (MRC) is calculated based on MC, assuming replacement of 50 % of the membrane area every membrane life which is specified by the user. The compressor work and installed compressor cost (CC) for the multistage compressor unit are determined using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">_CalculCompr</span></code> function within the module, considering the feed pressure in the membrane process to determine the number of compressors and using user-input heat capacity ratios and compressor efficiency. Compressor work is multiplied by unit electricity cost to compute utility cost (UC). The calculated TCI is converted into the equivalent annual cost (EAC) using the project year and interest rate to derive the annuity factor (AF), which divides TCI to obtain EAC.</p>
-<table class="docutils align-default" id="table">
+<p>In the results analysis module of pySembrane, the total annual cost (TAC) of membrane-based separation processes can be determined using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">CalculTAC</span></code> function to analyze their economic feasibility. <strong>Table 1</strong>  lists the procedure for calculating TAC. TAC serves as a fundamental result for economic evaluations and can be extended for profitability analysis based on production cost per unit product or revenue from the product. The <code class="xref py py-mod docutils literal notranslate"><span class="pre">CalculTAC</span></code> function computes the total capital investment (TCI) and total production cost (TPC) based on results from the process simulation module and user-input economic parameters, ultimately returning the TAC. TCI represents the sum of capital investments in the process, including installation costs for membrane modules and multistage compressor units, startup expenses, etc. The membrane module cost (MC) is derived from the membrane area obtained from membrane process design specifications multiplied by the user-input unit membrane cost. Additionally, the membrane replacement cost (MRC) is calculated based on MC, assuming replacement of 50 % of the membrane area every membrane life which is specified by the user. The compressor work and installed compressor cost (CC) for the multistage compressor unit are determined using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">_CalculCompr</span></code> function within the module, considering the feed pressure in the membrane process to determine the number of compressors and using user-input heat capacity ratios and compressor efficiency. Compressor work is multiplied by unit electricity cost to compute utility cost (UC). The calculated TCI is converted into the equivalent annual cost (EAC) using the project year and interest rate to derive the annuity factor (AF), which divides TCI to obtain EAC.\</p>
+<table class="docutils align-center" id="id3">
+<caption><span class="caption-text"><strong>Table 1</strong> Economic parameters for the total annual cost (TAC) to separate gas mixture using hollow fiber membrane process with multistage compressors.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <tbody>
 <tr class="row-odd"><td><p><strong>Total capital investment (TCI)</strong></p></td>
 <td><p><strong>TCI=TFI+SC</strong></p></td>

@@ -1,4 +1,0 @@
-Test
-============================
-.. automodule:: pySembrane.calculator
-    :members:

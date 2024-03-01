@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Examples &mdash; pySembrane 1.0.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -84,8 +86,13 @@
              
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
-<p>The application of pySembrane is demonstrated through an example of membrane screening for green H$_2$ separation. Practical case studies performed with the package and discussion of the results illustrate how pySembrane can be beneficially applied across various research fields and emphasize the reliability and compatibility of the package.</p>
-<a class="reference internal image-reference" href="_images/CasestudiesScheme.png"><img alt="CasestudiesScheme" class="align-center" src="_images/CasestudiesScheme.png" style="width: 700px;" /></a>
+<p>The application of pySembrane is demonstrated through an example of membrane screening for green H<sub>2</sub> separation. Practical case studies performed with the package and discussion of the results illustrate how pySembrane can be beneficially applied across various research fields and emphasize the reliability and compatibility of the package.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/CasestudiesScheme.png"><img alt="CasestudiesScheme" src="_images/CasestudiesScheme.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Fig. 1</strong> Target system and hierarchical workflow for evaluating metal-organic framework (MOF) membrane based on three sequential examples. In the first example (1), the membrane process simulation is employed to screen potential candidates from numerous MOF databases based on product purity. Subsequently, in the second example (2), process optimization is conducted to maximize economic feasibility for the chosen MOF candidate, leading to the identification of the most promising MOF. In the third example (3), an integrated analysis involving a commercial program (Aspen Plus) and pySembrane is executed, offering an in-depth analysis of the plant-scale performance of the selected MOF.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <hr class="docutils" />
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
@@ -116,15 +123,20 @@
 </div>
 <hr class="docutils" />
 <p><strong>Problem deifinition and process description</strong></p>
-<p>For the optimal MOF selection of a green hydrogen production process, pySembrane is applied to three examples to show how to utilize pySembrane in actual problems, as shown in Figure ref{fig:CasestudiesScheme}.
-In recent years, there has been significant interest in green hydrogen, owing to its potential as an environmentally friendly alternative to traditional fuels  cite{ChristenseN2006}. Simultaneously, green ammonia (NH$_3$) is gaining considerable attention as a transportation medium for hydrogen (H$_2$) cite{Lamb2019a, ga2024economic}. Given that NH$_3$ already possesses well-established infrastructure for production, transportation, and storage, green H$_2$ generated from regions abundant in renewable energy sources, such as Australia, Saudi Arabia, Chile, and Argentina, can be efficiently transported over long distances to global markets in the form of NH$_3$, as illustrated in Figure ref{fig:CasestudiesScheme}(a) cite{Morlanes2021}. Ensuring the high purity of H$_2$ post-decomposition of transported green NH$_3$ is crucial to meet the required purity standards for various applications. Among the various technologies for refining H$_2$, the membrane-based gas separation process is in the spotlight for light gas separation owing to advantages such as high energy efficiency and ease of operation cite{adhikari2006hydrogen, chae2022present}. However, due to significant performance variations in the membrane process depending on the material, selecting the optimal membrane requires thorough evaluation cite{lv2022tailoring}. Thus, across the three examples, membrane materials undergo evaluation through stages—single metric, optimization, and plant scale—to ultimately determine the optimal MOF membrane for green H$_2$ separation.</p>
+<p>For the optimal MOF selection of a green hydrogen production process, pySembrane is applied to three examples to show how to utilize pySembrane in actual problems, as shown in <strong>Fig. 1</strong>. In recent years, there has been significant interest in green hydrogen, owing to its potential as an environmentally friendly alternative to traditional fuels. Simultaneously, green ammonia (NH<sub>3</sub>) is gaining considerable attention as a transportation medium for hydrogen (H<sub>2</sub>). Given that NH<sub>3</sub> already possesses well-established infrastructure for production, transportation, and storage, green H<sub>2</sub> generated from regions abundant in renewable energy sources, such as Australia, Saudi Arabia, Chile, and Argentina, can be efficiently transported over long distances to global markets in the form of NH<sub>3</sub>, as illustrated in <strong>Fig. 1</strong> (a). Ensuring the high purity of H<sub>2</sub> post-decomposition of transported green NH<sub>3</sub> is crucial to meet the required purity standards for various applications. Among the various technologies for refining H<sub>2</sub>, the membrane-based gas separation process is in the spotlight for light gas separation owing to advantages such as high energy efficiency and ease of operation. However, due to significant performance variations in the membrane process depending on the material, selecting the optimal membrane requires thorough evaluation. Thus, across the three examples, membrane materials undergo evaluation through stages—single metric, optimization, and plant scale—to ultimately determine the optimal MOF membrane for green H<sub>2</sub> separation.</p>
 <p>In the first example, potential MOFs were selected based on the process performance of the numerous MOFs. Molecular and molecular dynamic simulations were performed to derive the membrane properties of each MOF, and then MOFs with purity exceeding 99.9% were selected through the membrane process simulation. In the second example, the potential MOF selected in the previous step was analyzed in greater depth via process optimization. Given that both product purity and economic viability vary with process variables, the optimal MOF was identified by determining the best process conditions through economic analysis and optimization. In the last example, the performance of the best MOF selected in the previous step was analyzed at the plant scale. The plant-scale model, developed using Aspen Plus commercial software, was integrated with the membrane process model to evaluate the impact of process conditions on both the membrane process and the final product.</p>
 <hr class="docutils" />
 <p><strong>Database and pre-screening</strong></p>
-<p>To find the most promising MOF, CoRE MOF 2019 database cite{chung2019advances}, which contains 12,020 MOFs, was analyzed for membrane materials. Out of these MOFs, 450 were excluded because of the absence of structure files (.cif) required for subsequent molecular simulations. The database provides structural properties of MOFs such as accessible surface area (ASA_m2_cm3), void fraction (AV_VF), the largest cavity diameter (LCD), pore limiting diameter (PLD), largest sphere along the free path (LFPD), and volume (cm3_g), among others. The distribution and correlations of each property are depicted in Figure ref{fig:CoREMOFvariables}.</p>
-<a class="reference internal image-reference" href="_images/CoREMOFvariables.png"><img alt="CoREMOFvariables" class="align-center" src="_images/CoREMOFvariables.png" style="width: 500px;" /></a>
-<p>Before evaluating MOFs as membrane materials through three examples, pre-screening is carried out for efficient assessment. Pre-screening consists of three stages: removal of inconsistent structures, elimination of MOFs containing precious metals, and structural-based screening. Initially, MOFs with disordered structures or containing precious metals were excluded. Disordered MOFs need to be removed since they represent physically implausible structures, despite being listed in the database. Secondly, MOFs containing precious metals were eliminated due to their impracticality in large-scale industrial applications, as their high costs render them unsuitable. Table ref{tab:PreciousMetals} lists excluded precious metals cite{ga2024multidisciplinary}. Lastly, the pore limiting diameter (PLD) represents the smallest pore diameter of a material, and if the PLD is smaller than the gas molecules, these gas molecules cannot penetrate the pores. As PLD is the most fundamental physical characteristic of a membrane, initial screening should be based on PLD values. In three examples, since the objective is to permeate the N$_2$/H$_2$ mixture through the membrane, the diameter of N$_2$ was selected as the threshold. Consequently, 6,086 MOFs with a PLD $ge$ 3.31 were screened for further analysis.</p>
-<table class="docutils align-default">
+<p>To find the most promising MOF, CoRE MOF 2019 database, which contains 12,020 MOFs, was analyzed for membrane materials. Out of these MOFs, 450 were excluded because of the absence of structure files (.cif) required for subsequent molecular simulations. The database provides structural properties of MOFs such as accessible surface area (ASA_m2_cm3), void fraction (AV_VF), the largest cavity diameter (LCD), pore limiting diameter (PLD), largest sphere along the free path (LFPD), and volume (cm3_g), among others. The distribution and correlations of each property are depicted in <strong>Fig. 2</strong>.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/CoREMOFvariables.png"><img alt="CoREMOFvariables" src="_images/CoREMOFvariables.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Fig. 2</strong> CoRE MOF database property distributions</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Before evaluating MOFs as membrane materials through three examples, pre-screening is carried out for efficient assessment. Pre-screening consists of three stages: removal of inconsistent structures, elimination of MOFs containing precious metals, and structural-based screening. Initially, MOFs with disordered structures or containing precious metals were excluded. Disordered MOFs need to be removed since they represent physically implausible structures, despite being listed in the database. Secondly, MOFs containing precious metals were eliminated due to their impracticality in large-scale industrial applications, as their high costs render them unsuitable. <strong>Table 1</strong> lists excluded precious metals. Lastly, the pore limiting diameter (PLD) represents the smallest pore diameter of a material, and if the PLD is smaller than the gas molecules, these gas molecules cannot penetrate the pores. As PLD is the most fundamental physical characteristic of a membrane, initial screening should be based on PLD values. In three examples, since the objective is to permeate the N<sub>2</sub>/H<sub>2</sub> mixture through the membrane, the diameter of N<sub>2</sub> was selected as the threshold. Consequently, 6,086 MOFs with a PLD &gt; 3.31 were screened for further analysis.</p>
+<table class="docutils align-center" id="id3">
+<caption><span class="caption-text"><strong>Table 1</strong> List of 25 precious metals that were excluded from the simulation.</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Chemical Symbols</p></th>
 <th class="head"><p>Name</p></th>

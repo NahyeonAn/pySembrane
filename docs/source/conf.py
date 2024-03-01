@@ -42,7 +42,7 @@ extensions = ['sphinx.ext.autosummary',
 templates_path = ['_templates']
 exclude_patterns = []
 
-numfig = True
+numfig = False
 numfig_secnum_depth = 0
 
 math_numfig = True

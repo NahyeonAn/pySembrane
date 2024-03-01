@@ -6,29 +6,33 @@ Example description
 
 In the second example, a robust evaluation using process optimization was conducted on the selected potential MOFs, leading to the identification of the most economically efficient MOF. Given the inherent variations in productivity and economic feasibility based on process conditions, an algorithm for process optimization was implemented. This algorithm minimizes the leveled cost of hydrogen (LCOH) production for each MOF, enabling an unbiased comparison of economic feasibility. The optimization considered four decision variables: feed flow rate, feed pressure, module length, and module diameter, each of which had a substantial influence over process performance. The optimal MOF was determined based on the results of this optimization. The objective function aimed to minimize LCOH, excluding conditions where product purity fell below 99.9\%. To enhance algorithm convergence, a penalty was defined, representing the difference between the threshold and calculated purity. 
 
-.. image:: images/Casestudy2.png
+.. figure:: images/Casestudy2.png
   :width: 700
   :alt: Casestudy2
   :align: center
+
+  **Fig. 1** Workflows and results of example 2. (a) Procedures for identifying the best MOF membrane through process optimization aimed at minimizing production costs. (b) Membrane selectivity and optimal Levelized Cost of Hydrogen (LCOH) of top 25 potential MOFs. (c) Results of decision variables and process performance before and after production cost optimization for the selected best MOF membrane. Sensitivity analyses depicting variations in (d) LCOH and (e) product purity based on four decision variables (feed flow rate and pressure, module length, and diameter) for the best MOF. Sensitivity analysis (f) between LCOH vs. module length, and (g) between product purity vs. feed flow rate for ten materials among potential MOFs (h) LCOH and (i) product purity variations corresponding to feed flow rate and module length for the identified best MOF.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Method
 ''''''''''''''''''''''''''''''
 
-In this example, process optimization and economic evaluation are performed on the potential MOF determined in the previous example and the best MOF is selected. Figure \ref{fig:Casestudy2Algorithm} outlines an algorithm for minimizing the levelized cost of hydrogen (LCOH) by optimizing process variables based on membrane properties. The algorithm comprises two sub-loops. Initially, process simulations are executed based on membrane properties and decision variables, evaluating whether purity constraints are met for a given condition of the product. If purity fails to meet the criteria on either the permeate or retentate side, the algorithm iteratively updates the decision variables. Meanwhile, if the purity constraints are satisfied on either side, an economic evaluation loop is executed. Within this loop, the results analysis module calculates the total annual cost (TAC) and derives LCOH using the equation:
+In this example, process optimization and economic evaluation are performed on the potential MOF determined in the previous example and the best MOF is selected. **Fig. 2** outlines an algorithm for minimizing the levelized cost of hydrogen (LCOH) by optimizing process variables based on membrane properties. The algorithm comprises two sub-loops. Initially, process simulations are executed based on membrane properties and decision variables, evaluating whether purity constraints are met for a given condition of the product. If purity fails to meet the criteria on either the permeate or retentate side, the algorithm iteratively updates the decision variables. Meanwhile, if the purity constraints are satisfied on either side, an economic evaluation loop is executed. Within this loop, the results analysis module calculates the total annual cost (TAC) and derives LCOH using the equation:
 
 .. math::
 
     LCOH = \frac{TAC}{Yearly \ H_2 \ production}
 
-The adjustment of decision variables persists until the minimum LCOH is attained. In this example, the differential evolution method was employed for process optimization. Differential evolution (DE) is a stochastic optimization algorithm widely employed for solving optimization problems. Modeled after natural selection, DE involves the evolution of candidate solutions (individuals) in a population across generations to uncover optimal solutions for a specified problem \cite{das2010differential}. DE efficiently addresses a broad spectrum of optimization issues owing to its simplicity, resilience, and efficacy. It excels in addressing problems featuring nonlinear and multimodal objective functions, surpassing the limitations of conventional gradient-based methods. Hence, DE was chosen to address the complex optimization problem in this example, implemented using the open-source Python package, \mintinline{python}{scipy}. The decision variables encompass the flow rate ($F_f$) and pressure ($P_f$) of the feed side, and the length ($L$) and diameter ($D_m$) of the module, each with predefined boundaries: 0.05 mol/s $< F_f <$ 1 mol/s, 10 bar $< P_f <$ 30 bar, 0.1 m $< L <$ 0.6 m, and 0.27 m $< D_m <$ 0.3 m. The objective function is formulated to minimize the sum of LCOH and a constraint penalty, where the latter is expressed as the square of the difference between the purity threshold and the derived product purity. This example demonstrates the application of \mintinline{python}{pySembrane} in the realms of optimization and membrane evaluation.
+The adjustment of decision variables persists until the minimum LCOH is attained. In this example, the differential evolution method was employed for process optimization. Differential evolution (DE) is a stochastic optimization algorithm widely employed for solving optimization problems. Modeled after natural selection, DE involves the evolution of candidate solutions (individuals) in a population across generations to uncover optimal solutions for a specified problem. DE efficiently addresses a broad spectrum of optimization issues owing to its simplicity, resilience, and efficacy. It excels in addressing problems featuring nonlinear and multimodal objective functions, surpassing the limitations of conventional gradient-based methods. Hence, DE was chosen to address the complex optimization problem in this example, implemented using the open-source Python package, :py:mod:`scipy`. The decision variables encompass the flow rate (:math:`F_f`) and pressure (:math:`P_f`) of the feed side, and the length (:math:`L`) and diameter (:math:`D_m`) of the module, each with predefined boundaries: 0.05 mol/s < :math:`F_f` < 1 mol/s, 10 bar < :math:`P_f` < 30 bar, 0.1 m < :math:`L` < 0.6 m, and 0.27 m < :math:`D_m` < 0.3 m. The objective function is formulated to minimize the sum of LCOH and a constraint penalty, where the latter is expressed as the square of the difference between the purity threshold and the derived product purity. This example demonstrates the application of :py:mod:`pySembrane` in the realms of optimization and membrane evaluation.
 
 
-.. image:: images/Casestudy2Algorithm.png
+.. figure:: images/Casestudy2Algorithm.png
   :width: 200
   :alt: Casestudy2Algorithm
   :align: center
+
+  **Fig. 2** Optimization algorithm for LCOH minimization
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -36,13 +40,17 @@ The adjustment of decision variables persists until the minimum LCOH is attained
 Results analysis
 ''''''''''''''''''''''''''
 
-Figure \ref{fig:Casestudy2}(b) shows the membrane selectivity and optimal LCOH of 25 materials among potential MOFs, and the rest of these are referred to in SI. The most promising MOF, NIJZOV \cite{mao1997synthesis}, exhibited an LCOH of 0.99 USD/kmol, while HIBGIJ \cite{samsonenko2007microporous} MOF showed the lowest economic feasibility. Interestingly, MURCOR \cite{rizzi2002carboxylate} MOF, despite its lower selectivity compared to VIXGEQ \cite{hamdouni2013synthesis} MOF, proved to be more economically feasible, underscoring that selectivity alone may not dictate process viability. This indicates, as observed in previous results, that membrane selectivity may not perfectly represent performance in actual processes. The results for the 47 potential MOFs are available in the SI.
-Figure \ref{fig:Casestudy2}(c) shows a comparison of decision variables and process performance before and after the process optimization of the most promising MOF. Initially, the H$_2$ purity was 99.91\%, exceeding the 99.9\% threshold by 0.01\%. Process optimization focused on narrowing this purity margin, leading to reduced production costs. Consequently, the LCOH was reduced by 13.9\%, declining from 1.15 USD/kg to 0.99 USD/kg. This reduction primarily resulted from notable decreases in feed flow rate and pressure among the four decision variables. Productivity increased as the flow rate of H$_2$ discarded to the retentate side decreased, and total annual cost decreased as energy consumption lowered by reducing feed pressure.
+**Fig. 1** (b) shows the membrane selectivity and optimal LCOH of 25 materials among potential MOFs, and the rest of these are listed in **Fig. 3**. The most promising MOF, NIJZOV, exhibited an LCOH of 0.99 USD/kmol, while HIBGIJ MOF showed the lowest economic feasibility. Interestingly, MURCOR MOF, despite its lower selectivity compared to VIXGEQ MOF, proved to be more economically feasible, underscoring that selectivity alone may not dictate process viability. This indicates, as observed in previous results, that membrane selectivity may not perfectly represent performance in actual processes.
 
-.. image:: images/SI_Ex2_results.png
+
+**Fig. 1** (c) shows a comparison of decision variables and process performance before and after the process optimization of the most promising MOF. Initially, the H\ :sub:`2` purity was 99.91\%, exceeding the 99.9\% threshold by 0.01\%. Process optimization focused on narrowing this purity margin, leading to reduced production costs. Consequently, the LCOH was reduced by 13.9\%, declining from 1.15 USD/kg to 0.99 USD/kg. This reduction primarily resulted from notable decreases in feed flow rate and pressure among the four decision variables. Productivity increased as the flow rate of H\ :sub:`2` discarded to the retentate side decreased, and total annual cost decreased as energy consumption lowered by reducing feed pressure.
+
+.. figure:: images/SI_Ex2_results.png
   :width: 700
   :alt: SI_Ex2_results
   :align: center
+
+  **Fig. 3** The optimal LCOH and selectivity of 47 potential MOFs.
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,16 +58,24 @@ Figure \ref{fig:Casestudy2}(c) shows a comparison of decision variables and proc
 Sensitivity analysis
 ''''''''''''''''''''''''''
 
-The sensitivity of LCOH and H$_2$ purity concerning the four decision variables is shown in Figure \ref{fig:Casestudy2}(d) and (e). The results represent the impact of each decision variable on LCOH and product purity for the best MOF membrane, and the x-axis denotes the optimal value after optimization, ranging from -30\% to +30\% of the optimal value. The gray area refers to an infeasible condition where product purity falls below 99.9\%. As depicted in Figure \ref{fig:Casestudy2}(d), LCOH is sensitive to the sequence of module length, feed flow rate, pressure, and module diameter. Conversely, Figure \ref{fig:Casestudy2}(e) indicates that product purity is sensitive in the order of feed flow rate, pressure, module length, and module diameter. This sensitivity arises due to the inherent trade-off relationship between product purity and process economics. For instance, the increase in production on the permeate side has a more pronounced impact on LCOH than the rise in process installation cost due to an increase in module length. However, the production increase on the permeate side by longer modules is caused by the large permeation of N$_2$ and results in reduced H$_2$ purity, leading to an infeasible condition. Conversely, feed pressure exhibits a convex shape based on the optimal value. This trend arises from decreased energy consumption with lower feed pressure, accompanied by a decrease in H$_2$ production, and increasing LCOH. Also, the opposite condition in which feed pressure increases is the same.
-Figures \ref{fig:Casestudy2}(f) and (g) present the sensitivity analysis results for module length and feed flow rate, which are the most sensitive variables to LCOH and product purity, respectively. Module length demonstrates an inversely proportional trend with LCOH, showing less sensitivity in materials with higher economic efficiency. On the contrary, product purity exhibits an increasing trend with the rise in feed flow rate, especially in materials with higher economic efficiency, indicating higher sensitivity.
-The following Figures \ref{fig:Casestudy2}(h) and (i) illustrate the impact of feed pressure and module length on the process performance of the optimal MOF. Similar to Figures \ref{fig:Casestudy2}(d--g), an increase in module length leads to a decrease in both LCOH and purity. In contrast, the relationship between feed pressure and LCOH initially shows a steady decrease with increasing module length, becoming more concave at longer lengths. This implies that the optimal feed pressure changes with module length, decreasing as the module length increases. Notably, at module lengths of 200 mm and 300 mm, the H$_2$ purity at the point with the lowest LCOH could not exceed the threshold, 99.9\% of H$_2$. This means that fixing the module length at 200 mm and feed pressure at 15 bar might exclude the MOF identified as best in this study from the list of potential candidates.
+The sensitivity of LCOH and H\ :sub:`2` purity concerning the four decision variables is shown in **Fig. 1** (d) and (e). The results represent the impact of each decision variable on LCOH and product purity for the best MOF membrane, and the x-axis denotes the optimal value after optimization, ranging from -30\% to +30\% of the optimal value. The gray area refers to an infeasible condition where product purity falls below 99.9\%. As depicted in **Fig. 1** (d), LCOH is sensitive to the sequence of module length, feed flow rate, pressure, and module diameter. Conversely, **Fig. 1** (e) indicates that product purity is sensitive in the order of feed flow rate, pressure, module length, and module diameter. This sensitivity arises due to the inherent trade-off relationship between product purity and process economics. For instance, the increase in production on the permeate side has a more pronounced impact on LCOH than the rise in process installation cost due to an increase in module length. However, the production increase on the permeate side by longer modules is caused by the large permeation of N\ :sub:`2` and results in reduced H\ :sub:`2` purity, leading to an infeasible condition. Conversely, feed pressure exhibits a convex shape based on the optimal value. This trend arises from decreased energy consumption with lower feed pressure, accompanied by a decrease in H\ :sub:`2` production, and increasing LCOH. Also, the opposite condition in which feed pressure increases is the same.
+
+
+**Fig. 1** (f) and (g) present the sensitivity analysis results for module length and feed flow rate, which are the most sensitive variables to LCOH and product purity, respectively. Module length demonstrates an inversely proportional trend with LCOH, showing less sensitivity in materials with higher economic efficiency. On the contrary, product purity exhibits an increasing trend with the rise in feed flow rate, especially in materials with higher economic efficiency, indicating higher sensitivity.
+
+
+The following **Fig. 1** (h) and (i) illustrate the impact of feed pressure and module length on the process performance of the optimal MOF. Similar to **Fig. 1** (d--g), an increase in module length leads to a decrease in both LCOH and purity. In contrast, the relationship between feed pressure and LCOH initially shows a steady decrease with increasing module length, becoming more concave at longer lengths. This implies that the optimal feed pressure changes with module length, decreasing as the module length increases. Notably, at module lengths of 200 mm and 300 mm, the H\ :sub:`2` purity at the point with the lowest LCOH could not exceed the threshold, 99.9\% of H\ :sub:`2`. This means that fixing the module length at 200 mm and feed pressure at 15 bar might exclude the MOF identified as best in this study from the list of potential candidates.
+
+
 The results emphasize that optimal process conditions vary based on the characteristics of each membrane. Hence, evaluating membranes under fixed conditions could lead to biased decisions. Tailoring operating conditions to the specific characteristics of each membrane enables a more accurate evaluation. Additionally, understanding the precise sensitivity of LCOH and product purity under different conditions provides valuable insights for future process optimization and design, enhancing the overall understanding of membrane behavior in various scenarios.
 
 
-.. image:: images/SI_Ex2_SA.png
+.. figure:: images/SI_Ex2_SA.png
   :width: 700
   :alt: SI_Ex2_SA
   :align: center
+
+  **Fig. 4** Sensitivity analysis for LCOH and purity according to four decision variables.
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,7 +83,7 @@ The results emphasize that optimal process conditions vary based on the characte
 Source code
 ''''''''''''''''''''''''
 
-Initially, import pySembrane package and the necessary libraries for data processing, optimization, and visualization. Load the H$_2$ purity data for each MOF derived from Example 1, and from this, select MOFs where the product purity exceeds 99.9\%. The .csv file loaded in the code below can be downloaded from GitHub or obtained by executing Example 1.
+Initially, import pySembrane package and the necessary libraries for data processing, optimization, and visualization. Load the H\ :sub:`2` purity data for each MOF derived from Example 1, and from this, select MOFs where the product purity exceeds 99.9\%. The .csv file loaded in the code below can be downloaded from GitHub or obtained by executing Example 1.
 
 .. code-block:: python
         
@@ -132,7 +148,7 @@ Define parameters used for the economic assessment of the membrane process.
     effi_ref = 0.8          # compressor efficiency
 
 
-Define an objective function for the optimization of four process variables aimed at minimizing the Levelized Cost of Hydrogen (LCOH). Firstly, the function takes decision variables to perform a membrane process simulation. Subsequently, it defines the system's outlet streams (F\_perm, F\_ret) to derive H2 purity after the process simulation terminated. If the product purity under given conditions exceeds 99.9\%, an economic assessment is performed, and the LCOH is derived. The squared difference between the calculated purity and the threshold is defined as a penalty, optimizing to minimize both LCOH and penalty. If purity does not exceed 99.9\%, it returns a significantly large value, indicating an infeasible condition.
+Define an objective function for the optimization of four process variables aimed at minimizing the Levelized Cost of Hydrogen (LCOH). Firstly, the function takes decision variables to perform a membrane process simulation. Subsequently, it defines the system's outlet streams (F\_perm, F\_ret) to derive H\ :sub:`2` purity after the process simulation terminated. If the product purity under given conditions exceeds 99.9\%, an economic assessment is performed, and the LCOH is derived. The squared difference between the calculated purity and the threshold is defined as a penalty, optimizing to minimize both LCOH and penalty. If purity does not exceed 99.9\%, it returns a significantly large value, indicating an infeasible condition.
 
 
 .. code-block:: python

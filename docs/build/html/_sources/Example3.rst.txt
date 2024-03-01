@@ -4,64 +4,70 @@ Example 3: Integrated process simulations with other processes for process level
 Example description
 ''''''''''''''''''''''''''''''
 
-In the last example, the process model is developed including the green NH$_3$ decomposition and H$_2$ purification, and the plant scale analysis is conducted for the selected optimal MOF membrane, integrating with the membrane process module. As shown in Figure \ref{fig:Casestudy3}(a), the processes, excluding the membrane process module, were developed using commercial software, Aspen Plus \cite{lee2023carbon}, while the membrane process module was modeled using the pySembrane. The integration between the two software tools took place in the Python environment, and each process model exchanged stream flow and pressure results to perform simulations. Figure \ref{fig:Casestudy3}(b) illustrates the integrated process, and each software is highlighted in blue and green, respectively. The entire process involves the decomposition of transported green NH$_3$ in the reactor, separation of unreacted NH$_3$ in the pressure swing adsorption process (PSA1), and hydrogen production in the PSA2 unit. The stream produced at the bottom of PSA2 contains a significant amount of hydrogen, necessitating additional separation processes to increase the H$_2$ production. Using pySembrane, the outlet stream of the compressor unit (Comp) is set as the feed for membrane process simulation, and the results are then utilized as input variables in Aspen Plus to determine the total production rate of H$_2$.
+In the last example, the process model is developed including the green NH\ :sub:`3` decomposition and H\ :sub:`2` purification, and the plant scale analysis is conducted for the selected optimal MOF membrane, integrating with the membrane process module. As shown in **Fig. 1**  (a), the processes, excluding the membrane process module, were developed using commercial software, Aspen Plus, while the membrane process module was modeled using the pySembrane. The integration between the two software tools took place in the Python environment, and each process model exchanged stream flow and pressure results to perform simulations. **Fig. 1**  (b) illustrates the integrated process, and each software is highlighted in blue and green, respectively. The entire process involves the decomposition of transported green NH\ :sub:`3` in the reactor, separation of unreacted NH\ :sub:`3` in the pressure swing adsorption process (PSA1), and hydrogen production in the PSA2 unit. The stream produced at the bottom of PSA2 contains a significant amount of hydrogen, necessitating additional separation processes to increase the H\ :sub:`2` production. Using pySembrane, the outlet stream of the compressor unit (Comp) is set as the feed for membrane process simulation, and the results are then utilized as input variables in Aspen Plus to determine the total production rate of H\ :sub:`2`.
 
-.. image:: images/Casestudy3.png
+.. figure:: images/Casestudy3.png
   :width: 700
   :alt: Casestudy3
   :align: center
+
+  **Fig. 1** (a) Schematic of the integration between pySembrane and commercial software in example 3. (b) green ammonia decomposition and hydrogen production process model using both commercial software and pySembrane. Flow rate and mole fraction results for each stream corresponding to the process variables: (c) NH\ :sub:`3` conversion of the reactor and (d) split ratio of PSA2 unit. (e) Comparison study of H\ :sub:`2` production rate between with and without membrane process according to fiber length of membrane process module.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Plant model devlopment
 ''''''''''''''''''''''''''
 
-The plant model developed by commercial software and the membrane separation model developed by pySembrane are integrated. Figure \ref{fig:Casestudy3ProcessModel} shows the entire process of decomposing green NH$_3$ and producing green H$_2$ by separating H$_2$ and N$_2$. The process model was simulated using Aspen Plus V14.0 with the Peng-Robinson fluid package for the thermodynamic model. Stream 101, the green NH$_3$ feedstock, is first decompressed via a valve (VLV-100) and subsequently pressurized to 8.5 bar using a pump (P-100). This feed stream is then heated to 100 \textcelsius in the heat exchanger (HX-101) before entering the NH$_3$ decomposition reactor (R-200). Through the reactor, green NH$_3$ is converted to H$_2$ and N$_2$, and a high-temperature H$_2$/N$_2$ mixture stream containing unreacted NH$_3$ is used as a hot stream of the heat exchanger (HX-100) for feed heating, which is then cooled to 105 \textcelsius. The reactor outlet stream repeats the cooling and separation process to produce the final product, H$_2$. Initially, unreacted NH$_3$ is removed in the pressure swing adsorption process (ADS-300) after cooling to 40 \textcelsius in a heat exchanger (HX-102) using cooling water. The H$_2$/N$_2$ mixture gas produced by the raffinate flow of the PSA process goes through the second PSA process (PSA-400) to produce high-purity H$_2$. Since the tail gas produced in PSA-400 still contains a large amount of H$_2$, additional H$_2$ is produced through the membrane-based separation process after being pressurized by a compressor (COMP-100) to increase production. Table \ref{tab:ProcessSpecification} and \ref{tab:StreamResults} list the detailed specifications of each unit and stream and the simulation results for each stream, respectively.
+The plant model developed by commercial software and the membrane separation model developed by pySembrane are integrated. **Fig. 2** shows the entire process of decomposing green NH\ :sub:`3` and producing green H\ :sub:`2` by separating H\ :sub:`2` and N\ :sub:`2`. The process model was simulated using Aspen Plus V14.0 with the Peng-Robinson fluid package for the thermodynamic model. Stream 101, the green NH\ :sub:`3` feedstock, is first decompressed via a valve (VLV-100) and subsequently pressurized to 8.5 bar using a pump (P-100). This feed stream is then heated to 100 :math:`^{\circ} C` in the heat exchanger (HX-101) before entering the NH\ :sub:`3` decomposition reactor (R-200). Through the reactor, green NH\ :sub:`3` is converted to H\ :sub:`2` and N\ :sub:`2`, and a high-temperature H\ :sub:`2`/N\ :sub:`2` mixture stream containing unreacted NH\ :sub:`3` is used as a hot stream of the heat exchanger (HX-100) for feed heating, which is then cooled to 105 :math:`^{\circ} C`. The reactor outlet stream repeats the cooling and separation process to produce the final product, H\ :sub:`2`. Initially, unreacted NH\ :sub:`3` is removed in the pressure swing adsorption process (ADS-300) after cooling to 40 :math:`^{\circ} C` in a heat exchanger (HX-102) using cooling water. The H\ :sub:`2`/N\ :sub:`2` mixture gas produced by the raffinate flow of the PSA process goes through the second PSA process (PSA-400) to produce high-purity H\ :sub:`2`. Since the tail gas produced in PSA-400 still contains a large amount of H\ :sub:`2`, additional H\ :sub:`2` is produced through the membrane-based separation process after being pressurized by a compressor (COMP-100) to increase production. **Table 1** lists the detailed specifications of each unit and feed stream.
 
 
-.. image:: images/Casestudy3ProcessModel.png
+.. figure:: images/Casestudy3ProcessModel.png
   :width: 700
   :alt: Casestudy3ProcessModel
   :align: center
 
+  **Fig. 2** Process diagram of green ammonia cracking and hydrogen production system.
 
-+-----------+---------------------------------------+
-| Model     | Specification                         |
-+===========+=======================================+
-| VLV-100   | Adiabatic flash                       |
-+           +---------------------------------------+
-|           | Pressure: 6bar                        |
-+-----------+---------------------------------------+
-| P-100     | Pressure increase: 250kPa             |
-+           +---------------------------------------+
-|           | Pump efficiency: 75%                  |
-+-----------+---------------------------------------+
-| HX-101    | Cold stream outlet temperature: 100C  |
-+-----------+---------------------------------------+
-| R-200     | Reaction: 2NH3->3H2+N2                |
-+           +---------------------------------------+
-|           | Temperature: 600C                     |
-+           +---------------------------------------+
-|           | Fraction of conversion:0.9            |
-+           +---------------------------------------+
-|           | Pressure: 8.5bar                      |
-+-----------+---------------------------------------+
-| HX-102    | Cooling water inlet temperature: 15C  |
-+           +---------------------------------------+
-|           | Hot stream outlet temperature: 40C    |
-+-----------+---------------------------------------+
-| ADS-300   | Split fraction of H2,N2,O2 and H2O: 1 |
-+-----------+---------------------------------------+
-| HX-103    | Cooling water inlet temperature: 15C  |
-+           +---------------------------------------+
-|           | Hot stream outlet temperature: 40C    |
-+-----------+---------------------------------------+
-| PSA-400   | Split fraction of H2: 0.8             |
-+-----------+---------------------------------------+
-| COMP-100  | Pressure: 11.15bar                    |
-+           +---------------------------------------+
-|           | Compressor efficiency: 0.75           |
-+-----------+---------------------------------------+
+
+.. table:: **Table 1** Specification of each model and feed stream.
+
+    +-----------+----------------------------------------------------------------------------+
+    | Model     | Specification                                                              |
+    +===========+============================================================================+
+    | VLV-100   | Adiabatic flash                                                            |
+    +           +----------------------------------------------------------------------------+
+    |           | Pressure: 6bar                                                             |
+    +-----------+----------------------------------------------------------------------------+
+    | P-100     | Pressure increase: 250kPa                                                  |
+    +           +----------------------------------------------------------------------------+
+    |           | Pump efficiency: 75%                                                       |
+    +-----------+----------------------------------------------------------------------------+
+    | HX-101    | Cold stream outlet temperature: 100 :math:`^{\circ} C`                     |
+    +-----------+----------------------------------------------------------------------------+
+    | R-200     | Reaction: 2NH\ :sub:`3`->3H\ :sub:`2`+N\ :sub:`2`                          |
+    +           +----------------------------------------------------------------------------+
+    |           | Temperature: 600:math:`^{\circ} C`                                         |
+    +           +----------------------------------------------------------------------------+
+    |           | Fraction of conversion:0.9                                                 |
+    +           +----------------------------------------------------------------------------+
+    |           | Pressure: 8.5bar                                                           |
+    +-----------+----------------------------------------------------------------------------+
+    | HX-102    | Cooling water inlet temperature: 15 :math:`^{\circ} C`                     |
+    +           +----------------------------------------------------------------------------+
+    |           | Hot stream outlet temperature: 40 :math:`^{\circ} C`                       |
+    +-----------+----------------------------------------------------------------------------+
+    | ADS-300   | Split fraction of H\ :sub:`2`,N\ :sub:`2`,O\ :sub:`2` and H\ :sub:`2` O: 1 |
+    +-----------+----------------------------------------------------------------------------+
+    | HX-103    | Cooling water inlet temperature: 15 :math:`^{\circ} C`                     |
+    +           +----------------------------------------------------------------------------+
+    |           | Hot stream outlet temperature: 40 :math:`^{\circ} C`                       |
+    +-----------+----------------------------------------------------------------------------+
+    | PSA-400   | Split fraction of H\ :sub:`2`: 0.8                                         |
+    +-----------+----------------------------------------------------------------------------+
+    | COMP-100  | Pressure: 11.15bar                                                         |
+    +           +----------------------------------------------------------------------------+
+    |           | Compressor efficiency: 0.75                                                |
+    +-----------+----------------------------------------------------------------------------+
 
 
 
@@ -70,7 +76,7 @@ The plant model developed by commercial software and the membrane separation mod
 Results analysis
 ''''''''''''''''''''''''''
 
-Figure \ref{fig:Casestudy3}(c--d) presents the simulation results corresponding to the conversion rate of the NH$_3$ decomposition reactor and the ratio split to the bottom in the PSA2 unit. F$_f$ and y$_f$ represent the flow rate and composition of the feed entering the membrane module, respectively, and F$_p$ and y$_p$ denote the flow rate and composition of the permeate side produced in the membrane process. As shown in Figure \ref{fig:Casestudy3}(c), with an increase in the conversion rate of the NH$_3$ decomposition reactor, the flow rates of N$_2$ and H$_2$ increase, leading to an increase in the feed flow rate of the module. Consequently, flow rates and H$_2$ purity on the permeate side increased. Figure \ref{fig:Casestudy3}(d) illustrates the PSA2 split ratio, which represents the ratio of the flow rate entering the membrane process to the total flow rate produced in the PSA2 unit, as it increases, indicating an increase in both the feed flow rate and composition. As a result, the H$_2$ production on the permeate side is increased, with the purity of H$_2$ showing a tendency to increase significantly. Figure \ref{fig:Casestudy3}(e) compares the total production of H$_2$ according to the number of fibers in the membrane process module, depending on the presence of the membrane process (MP). Without a membrane process, the production rate is low at 15.2 kg/hr, but with additional H$_2$ production from the stream discarded by the membrane process, the overall production of H$_2$ significantly increases. Moreover, as the number of fibers in the module increases, the H$_2$ production rate increases significantly, contributing to the overall productivity of the process. This example allows for the analysis of the impact of operating conditions in upstream processes on the membrane process and the influence of membrane process conditions on the overall process.
+**Fig. 1** (c--d) presents the simulation results corresponding to the conversion rate of the NH\ :sub:`3` decomposition reactor and the ratio split to the bottom in the PSA2 unit. :math:`F_f` and :math:`y_f` represent the flow rate and composition of the feed entering the membrane module, respectively, and :math:`F_p` and :math:`y_p` denote the flow rate and composition of the permeate side produced in the membrane process. As shown in **Fig. 1**  (c), with an increase in the conversion rate of the NH\ :sub:`3` decomposition reactor, the flow rates of N\ :sub:`2` and H\ :sub:`2` increase, leading to an increase in the feed flow rate of the module. Consequently, flow rates and H\ :sub:`2` purity on the permeate side increased. **Fig. 1** (d) illustrates the PSA2 split ratio, which represents the ratio of the flow rate entering the membrane process to the total flow rate produced in the PSA2 unit, as it increases, indicating an increase in both the feed flow rate and composition. As a result, the H\ :sub:`2` production on the permeate side is increased, with the purity of H\ :sub:`2` showing a tendency to increase significantly. **Fig. 1** (e) compares the total production of H\ :sub:`2` according to the number of fibers in the membrane process module, depending on the presence of the membrane process (MP). Without a membrane process, the production rate is low at 15.2 kg/hr, but with additional H\ :sub:`2` production from the stream discarded by the membrane process, the overall production of H\ :sub:`2` significantly increases. Moreover, as the number of fibers in the module increases, the H\ :sub:`2` production rate increases significantly, contributing to the overall productivity of the process. This example allows for the analysis of the impact of operating conditions in upstream processes on the membrane process and the influence of membrane process conditions on the overall process.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -159,7 +165,7 @@ Load the membrane properties of the best MOF determined from a previous example 
 
 
 
-Utilize the results of the membrane process simulation as input for the MEMOUT stream in the plant model. Enter the flow rate for each component, temperature, and pressure, then run the Aspen Plus file. This calculates the additional H$_2$ production through the membrane module to derive the total H$_2$ production.
+Utilize the results of the membrane process simulation as input for the MEMOUT stream in the plant model. Enter the flow rate for each component, temperature, and pressure, then run the Aspen Plus file. This calculates the additional H\ :sub:`2` production through the membrane module to derive the total H\ :sub:`2` production.
 
 
 .. code-block:: python
@@ -178,7 +184,7 @@ Utilize the results of the membrane process simulation as input for the MEMOUT s
     print("Total H2 production: ", PureH2, "kg/hr")
 
 
-Perform sensitivity analysis to analyze the impact of various process variables. Below, a loop repeatedly simulates the process models as the NH3 conversion rate in the NH$_3$ decomposition reactor (R-200) changes from 50 to 95\%.
+Perform sensitivity analysis to analyze the impact of various process variables. Below, a loop repeatedly simulates the process models as the NH3 conversion rate in the NH\ :sub:`3` decomposition reactor (R-200) changes from 50 to 95\%.
 
 
 .. code-block:: python
@@ -222,7 +228,7 @@ Perform sensitivity analysis to analyze the impact of various process variables.
         H2_prod.append([F_feed, x_H2, x_N2, res[-1,0], res[-1,1], res[-1,2], res[-1,3], PureH2])
 
 
-Below is the code to plot the flow rate and composition of the feed entering the membrane module and the flow rate and composition of the permeate side produced as reactor conversion changes, yielding Figure 6(c) upon execution.
+Below is the code to plot the flow rate and composition of the feed entering the membrane module and the flow rate and composition of the permeate side produced as reactor conversion changes, yielding **Fig. 1** (c) upon execution.
 
 
 .. code-block:: python
@@ -302,7 +308,7 @@ Below is the code for comparing the process performance as the split ratio of th
         split_res.append([F_feed, x_H2, x_N2, res[-1,0], res[-1,1], res[-1,2], res[-1,3], PureH2])
 
 
-Below is the code for visualizing the flow rate and composition of the feed entering the membrane module and the flow rate and composition of the permeate side produced as the PSA process's split ratio changes, yielding Figure 6(d) upon execution.
+Below is the code for visualizing the flow rate and composition of the feed entering the membrane module and the flow rate and composition of the permeate side produced as the PSA process's split ratio changes, yielding **Fig. 1** (d) upon execution.
 
 .. code-block:: python
         
@@ -335,7 +341,7 @@ Below is the code for visualizing the flow rate and composition of the feed ente
 
 
 
-Below is the code to analyze the variation in H$_2$ production as the number of fibers in the membrane process changes. Through a loop, the process performance can be analyzed as the number of fibers changes from 100 to 500.
+Below is the code to analyze the variation in H\ :sub:`2` production as the number of fibers in the membrane process changes. Through a loop, the process performance can be analyzed as the number of fibers changes from 100 to 500.
 
 
 .. code-block:: python
@@ -386,7 +392,7 @@ Below is the code to analyze the variation in H$_2$ production as the number of 
 
 
 
-Below is the code to plot the impact of the number of membrane fibers on H$_2$ production, analyzing the production with and without the membrane process (MP) and according to the number of fibers. Executing the code below yields Figure 6(e).
+Below is the code to plot the impact of the number of membrane fibers on H\ :sub:`2` production, analyzing the production with and without the membrane process (MP) and according to the number of fibers. Executing the code below yields **Fig. 1** (e).
 
 
 .. code-block:: python
