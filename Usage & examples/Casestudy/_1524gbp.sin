@@ -1,0 +1,162 @@
+ >>ORIGINAL RUN                           APRIL 25, 2024      
+   8:11:46 P.M.                           THURSDAY    
+   INPUT FILE: _1524gbp.inm
+   RUN ID : _1524gbp
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 39.0 at 20:11:45 Thu Apr 25, 2024
+          3    ;Directory c:\Users\chldu\Documents\GitHub\pySembrane\Usage & examples\Casestudy  Runid GREENNH3
+          4    ;
+          5
+          6
+          7    DYNAMICS
+          8        DYNAMICS RESULTS=ON
+          9
+         10    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         11            INVERSE-PRES='1/bar' SHORT-LENGTH=mm
+         12
+         13    DEF-STREAMS CONVEN ALL
+         14
+         15    MODEL-OPTION
+         16
+         17    DATABANKS 'APV121 PURE39' / 'APV121 AQUEOUS' / 'APV121 SOLIDS' &
+         18             / 'APV121 INORGANIC' / 'APESV121 AP-EOS' /  &
+         19            'NISTV121 NIST-TRC' / NOASPENPCD
+         20
+         21    PROP-SOURCES 'APV121 PURE39' / 'APV121 AQUEOUS' /  &
+         22            'APV121 SOLIDS' / 'APV121 INORGANIC' / 'APESV121 AP-EOS' &
+         23             / 'NISTV121 NIST-TRC'
+         24
+         25    COMPONENTS
+         26        HYDRO-01 H2 /
+         27        NITRO-01 N2 /
+         28        AMMON-01 H3N /
+         29        OXYGE-01 O2 /
+         30        WATER H2O
+         31
+         32    SOLVE
+         33        RUN-MODE MODE=SIM
+         34
+         35    FLOWSHEET
+         36        BLOCK VLV-100 IN=101 OUT=102
+         37        BLOCK P-100 IN=102 OUT=103
+         38        BLOCK HX-101 IN=201-1 103 OUT=202 104
+         39        BLOCK R-200 IN=104 OUT=201-1
+         40        BLOCK HX-102 IN=202 990CWS OUT=203 991CWR
+         41        BLOCK ADS-300 IN=203 OUT=301 NH3
+         42        BLOCK HX-103 IN=301 992CWS OUT=302 993CWR
+         43        BLOCK PSA-400 IN=302 OUT=401 402-1
+         44        BLOCK COMP-100 IN=402-1 OUT=402-2
+         45        BLOCK MIXER IN=401 MEMOUT OUT=PUREH2
+         46
+         47    PROPERTIES PENG-ROB
+         48
+         49    PROP-DATA PRKBV-1
+         50        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         51            INVERSE-PRES='1/bar' SHORT-LENGTH=mm
+         52        PROP-LIST PRKBV
+         53        BPVAL HYDRO-01 NITRO-01 .1030000000 0.0 0.0 -273.1500000  &
+         54            726.8500000
+         55        BPVAL NITRO-01 HYDRO-01 .1030000000 0.0 0.0 -273.1500000  &
+         56            726.8500000
+         57        BPVAL NITRO-01 AMMON-01 .2193000000 0.0 0.0 -273.1500000  &
+         58            726.8500000
+         59        BPVAL AMMON-01 NITRO-01 .2193000000 0.0 0.0 -273.1500000  &
+         60            726.8500000
+         61        BPVAL NITRO-01 OXYGE-01 -.0119000000 0.0 0.0 -273.1500000  &
+         62            726.8500000
+         63        BPVAL OXYGE-01 NITRO-01 -.0119000000 0.0 0.0 -273.1500000  &
+         64            726.8500000
+         65        BPVAL AMMON-01 WATER -.2589000000 0.0 0.0 -273.1500000  &
+         66            726.8500000
+         67        BPVAL WATER AMMON-01 -.2589000000 0.0 0.0 -273.1500000  &
+         68            726.8500000
+         69
+         70    STREAM 101
+         71        SUBSTREAM MIXED TEMP=-40. PRES=21. MOLE-FLOW=5.88
+         72        MOLE-FRAC AMMON-01 1.
+         73
+         74    STREAM 990CWS
+         75        SUBSTREAM MIXED TEMP=15. PRES=1. MOLE-FLOW=20.
+         76        MOLE-FLOW WATER 1.
+         77
+         78    STREAM 992CWS
+         79        SUBSTREAM MIXED TEMP=15. PRES=1. MOLE-FLOW=20.
+         80        MOLE-FRAC WATER 1.
+         81
+         82    STREAM MEMOUT
+         83        SUBSTREAM MIXED TEMP=660.074342 PRES=1.0000000007
+         84        MOLE-FLOW HYDRO-01 1.2152705296 / NITRO-01 0.22716656936
+         85
+         86    BLOCK MIXER MIXER
+         87        PARAM PRES=8.5
+         88
+         89    BLOCK ADS-300 SEP
+         90        PARAM
+         91        FRAC STREAM=301 SUBSTREAM=MIXED COMPS=HYDRO-01 NITRO-01  &
+         92            AMMON-01 OXYGE-01 WATER FRACS=1. 1. 0. 1. 1.
+         93        FLASH-SPECS 301 TEMP=164.2
+         94        FLASH-SPECS NH3 VFRAC=1.
+         95
+         96    BLOCK PSA-400 SEP
+         97        PARAM
+         98        FRAC STREAM=401 SUBSTREAM=MIXED COMPS=HYDRO-01 NITRO-01  &
+         99            AMMON-01 OXYGE-01 WATER FRACS=0.8 0. 0. 0. 0.
+        100        FLASH-SPECS 401 TEMP=50.4 PRES=8.5
+        101        FLASH-SPECS 402-1 TEMP=40. PRES=1.313
+        102
+        103    BLOCK HX-101 HEATX
+        104        PARAM T-COLD=100. CALC-TYPE=DESIGN U-OPTION=PHASE  &
+        105            F-OPTION=CONSTANT CALC-METHOD=SHORTCUT
+        106        FEEDS HOT=201-1 COLD=103
+        107        OUTLETS-HOT 202
+        108        OUTLETS-COLD 104
+        109        HOT-SIDE DP-OPTION=CONSTANT DPPARMOPT=NO
+        110        COLD-SIDE DP-OPTION=CONSTANT DPPARMOPT=NO
+        111        TQ-PARAM CURVE=YES
+        112
+        113    BLOCK HX-102 HEATX
+        114        PARAM T-HOT=40. CALC-TYPE=DESIGN U-OPTION=PHASE  &
+        115            F-OPTION=CONSTANT CALC-METHOD=SHORTCUT
+        116        FEEDS HOT=202 COLD=990CWS
+        117        OUTLETS-HOT 203
+        118        OUTLETS-COLD 991CWR
+        119        HOT-SIDE DP-OPTION=CONSTANT DPPARMOPT=NO
+        120        COLD-SIDE DP-OPTION=CONSTANT DPPARMOPT=NO
+        121        TQ-PARAM CURVE=YES
+        122
+        123    BLOCK HX-103 HEATX
+        124        PARAM T-HOT=40. CALC-TYPE=DESIGN U-OPTION=PHASE  &
+        125            F-OPTION=CONSTANT CALC-METHOD=SHORTCUT
+        126        FEEDS HOT=301 COLD=992CWS
+        127        OUTLETS-HOT 302
+        128        OUTLETS-COLD 993CWR
+        129        HOT-SIDE DP-OPTION=CONSTANT DPPARMOPT=NO
+        130        COLD-SIDE DP-OPTION=CONSTANT DPPARMOPT=NO
+        131        TQ-PARAM CURVE=YES
+        132
+        133    BLOCK R-200 RSTOIC
+        134        PARAM TEMP=600. PRES=8.5
+        135        STOIC 1 MIXED AMMON-01 -2. / HYDRO-01 3. / NITRO-01 1.
+        136        CONV 1 MIXED AMMON-01 0.9
+        137
+        138    BLOCK P-100 PUMP
+        139        PARAM DELP=250. <kPa> EFF=0.75
+        140
+        141    BLOCK COMP-100 COMPR
+        142        PARAM TYPE=ISENTROPIC PRES=11.15 SEFF=0.75 SB-MAXIT=30  &
+        143            SB-TOL=0.0001
+        144
+        145    BLOCK VLV-100 VALVE
+        146        PARAM P-OUT=6.
+        147
+        148    EO-CONV-OPTI
+        149
+        150    STREAM-REPOR MOLEFLOW
+        151    ;
+        152    ;
+        153    ;
+        154    ;
+        155    ;
+
+   SIMULATION STARTED     MODULE USED: apmain  
+   LOCATED IN:C:\Program Files\AspenTech\Aspen Plus V12.1\Engine\\xeq

@@ -1,10 +1,10 @@
-INPUT: GreenNH3.inm
+SLAVE:
+INPUT: _2012vuo.inm
 MODNAME: apmain
-RUNID: GreenNH3
-NEW_RUNID: GreenNH3
-OLD_RUNID: GreenNH3
-PDF: GreenNH3.appdf
+RUNID: _2012vuo
+NEW_RUNID: _2012vuo
+OLD_RUNID: _2012vuo
+PDF: _2012vuo.appdf
 USERNAME: ±Ë¡§»Ø09
 XMOD: C:\Program Files\AspenTech\Aspen Plus V12.1\Engine\xeq\apmain
-SPONLY:
 DBCONN: _2012vuo.ads

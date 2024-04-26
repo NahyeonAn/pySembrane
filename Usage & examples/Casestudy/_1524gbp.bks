@@ -1,0 +1,1179 @@
+ ? SETUP UNITS-SET SET1 ? \ UNITSET BASESET = MET (3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 5 3 4 3 3 3 3 3 3 3 3 4 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5 3 3 3 3 3 3 5 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
+ 3 3 3 3 3 3 7 3 3 3 3 3 3 3 3 3 3) \                                           
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000021 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00401839295 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01366781840 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00642650343 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04223383276 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000021 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00401839295 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01366781840 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00642650343 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04223383276 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .03954655276 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01850521529 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56420865222 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06095758327 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01518586799 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00704744663 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .54793887097 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04468115450 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000012 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02554868082 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01462567148 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .60167529937 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09705354873 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01379256276 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00746094125 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46248299531 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04102858642 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000021 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00401839295 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01366781840 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00574390302 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03072741091 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00611696142 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03676933083 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00630280965 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04007396160 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00642650343 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04223383276 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .03954655276 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01850521529 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .31964388276 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03726753318 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .45392498798 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04703984020 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .52266940789 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05460601582 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56420865222 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06095758327 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01518586799 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00704744663 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .19830114658 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02102022586 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .35288171149 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03072290183 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46448613465 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03841558142 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .54793887097 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04468115450 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000012 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02554868082 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01462567148 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .20183289336 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04459558058 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .35756538423 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06590100966 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .48850103493 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .08293379472 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .60167529937 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09705354873 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01379256276 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00746094125 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .13132535687 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01911096624 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .25237000128 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02720171371 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .36220104839 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03436507220 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46248299531 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04102858642 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00566741473 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00203576001 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .24671180062 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00319454475 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .38368311775 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00342497391 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .45672132031 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00354137816 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .50201242078 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00361204156 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000015 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00659564721 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00408396446 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04929724247 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01134403561 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08683867832 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01550550378 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .11640362928 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01835037641 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .14005022283 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02043287898 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04291008438 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02045869488 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .34036426531 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04231453562 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .48751994391 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05413682466 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56413931358 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06339787058 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .61085188174 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .07122969021 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .03928266920 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02113199641 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .24432340696 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04484946606 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .35647071383 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05510967154 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .42372958023 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06186542361 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46947303515 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06688051907 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000011 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01631089654 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00920189449 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .15298209780 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02731054187 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .29176204118 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04191343154 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .41225887658 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05566285552 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .51624267180 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06895723412 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .09431926836 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00057123668 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .29085391959 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00190185230 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46595324688 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00329436592 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .62027531022 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00474681114 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .75482533267 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00625622825 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02393526064 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00336321852 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .07692286993 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01099221729 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .12870660850 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01870686789 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .17928277107 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02650728036 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .22864877757 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03439348801 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .11717785286 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01115967365 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .35822564870 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03731656571 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56828962208 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06490783085 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .74840189703 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09388372598 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000003 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .90032735676 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .12416079297 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08630768689 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01065379396 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .26870309999 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03534662588 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .43477173865 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06103708327 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .58469699874 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .08771242571 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000004 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .71887180711 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .11534722487 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .09616948607 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01092620113 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .29770963212 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03634097994 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .47876198284 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06290120796 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .63968036093 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09058541072 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000004 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .78114794845 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .11935384339 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00566741473 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00203576001 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .24671180062 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00319454475 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .38368311775 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00342497391 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .45672132031 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00354137816 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .50201242078 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00361204156 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .09431926836 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00057123668 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .29085391959 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00190185230 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46595324688 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00329436592 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .62027531022 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00474681114 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .75482533267 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00625622825 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02393526064 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00336321852 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .07692286993 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01099221729 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .12870660850 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01870686789 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .17928277107 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02650728036 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .22864877757 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03439348801 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .11717785286 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01115967365 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .35822564870 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03731656571 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56828962208 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06490783085 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .74840189703 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09388372598 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000003 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .90032735676 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .12416079297 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08630768689 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01065379396 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .26870309999 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03534662588 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .43477173865 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06103708327 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .58469699874 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .08771242571 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000004 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .71887180711 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .11534722487 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .09616948607 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01092620113 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .29770963212 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03634097994 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .47876198284 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06290120796 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .63968036093 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09058541072 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000004 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .78114794845 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .11935384339 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .09431926836 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00057123668 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .29085391959 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00190185230 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46595324688 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00329436592 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .62027531022 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00474681114 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .75482533267 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00625622825 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02393526064 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00336321852 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .07692286993 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01099221729 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .12870660850 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01870686789 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .17928277107 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02650728036 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .22864877757 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03439348801 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .11717785286 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01115967365 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .35822564870 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03731656571 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56828962208 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06490783085 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .74840189703 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09388372598 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000003 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .90032735676 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .12416079297 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08630768689 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01065379396 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .26870309999 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03534662588 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .43477173865 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06103708327 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .58469699874 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .08771242571 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000004 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .71887180711 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .11534722487 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .06806697421 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00054579525 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .21133333099 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00180471149 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .34120387437 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00310540727 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .45815520452 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00444632005 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56279133228 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00582549817 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01382745104 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00247805452 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04461545556 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00807883564 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .07495452088 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01371441301 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .10484401298 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01938472721 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .13428349764 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02508970458 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08880387442 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00836048254 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .27341808151 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02775579654 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .43744572611 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04794109196 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .58172810470 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06888226147 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000005 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .70741114949 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09053367123 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .06188660819 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00869297633 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .19422218312 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02866279690 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .31706400802 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04919556352 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .43056335211 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .07028080356 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .53494253738 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .09190391382 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04811955761 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00646124041 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .15220667686 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02123683775 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .25053116215 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03633939535 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .34315003069 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05176480406 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 319.4073960 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .43014709193 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06750747429 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00095498041 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00033972701 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00308836488 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00110348021 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00520079828 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00186635289 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00729259742 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00262833944 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00936407191 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00338943433 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000015 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00110430965 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00068128519 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000015 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00358164064 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00221326793 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000015 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00604877809 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00374398019 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000015 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00850572863 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00527340731 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000015 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01095249927 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00680153464 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00733015183 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00340914698 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02355865203 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01108086678 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .03943036949 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01875358242 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .05495636297 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02642659430 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .07014737914 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03409921897 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00666762533 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00352093437 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02149223953 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01144476952 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .03607460189 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01937051853 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .05041909068 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02729759009 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .06453006622 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03522539820 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000011 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00274183345 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00153448144 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000011 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00887673396 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00498587258 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000011 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01496445212 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00843554326 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000011 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02100524346 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01188340793 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000011 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02699936677 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01532938122 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000001 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00566741473 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00203576001 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .24671180062 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00319454475 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .38368311775 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00342497391 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .45672132031 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00354137816 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .50201242078 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00361204156 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000015 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00659564721 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00408396446 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04929724247 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01134403561 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08683867832 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01550550378 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .11640362928 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01835037641 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .14005022283 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02043287898 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04291008438 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02045869488 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .34036426531 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04231453562 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .48751994391 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05413682466 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .56413931358 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06339787058 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .61085188174 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .07122969021 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .03928266920 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02113199641 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .24432340696 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04484946606 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .35647071383 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05510967154 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .42372958023 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06186542361 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .46947303515 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06688051907 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 2.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 93.35822280 <22> <4> PRES = 1.0000000011 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01631089654 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00920189449 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 5.250 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \     
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 241.6540230 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .15298209780 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02731054187 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 8.50 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 331.3150610 <22> <4> PRES = 1.0000000007 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .29176204118 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04191343154 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 11.750 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \    
+ "\@"                                                                           
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 398.1084480 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .41225887658 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05566285552 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 15.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@" 
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 452.1649410 <22> <4> PRES = 1.0000000006 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .51624267180 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06895723412 <-89> <3> \ "\@"                      
+ ? BLOCK COMPR COMP-100 ? ; SET1 ; \ PARAM TYPE = ISENTROPIC PRES =             
+ 4.0 <20> <5> SEFF = .750 <0> <0> SB-TOL = .00010 <0> <0> SB-MAXIT = 30 \ "\@"  
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02825885445 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00049705580 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08865281772 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00162660890 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .14478573560 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00277104728 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .19685440999 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00392962027 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .24506273778 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00510155645 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .00546776841 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00151961503 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01770316870 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00494370690 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .02984564888 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00837462599 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04189517188 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01181232497 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .05385171740 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01525675538 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .04433859887 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00593846441 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .13841708123 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01948853763 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .224921730 <-89> <3> / SSID1 =   
+ MIXED CID = NITRO-01 FLOW = .03328871506 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .30424662815 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .04732460003 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000008 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .37681463218 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06158091979 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .03122353426 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00638266314 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .09905335750 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02087955173 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .16358711483 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03556035313 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .22490497949 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .05041944531 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .28309537121 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .06545077754 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .01643998383 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .00350560046 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .05276812341 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01143177116 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .08818636158 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .01941069501 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000010 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .12270338295 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .02744153377 <-89> <3> \ "\@"                      
+ ? STREAM MATERIAL MEMOUT ? ; SET1 ; \ SUBSTREAM SSID = MIXED TEMP =            
+ 195.8696690 <22> <4> PRES = 1.0000000009 <20> <5> BASIS = MOLE-FLOW \ \        
+ MOLE-FLOW SSID1 = MIXED CID = HYDRO-01 FLOW = .15632870746 <-89> <3> / SSID1 = 
+ MIXED CID = NITRO-01 FLOW = .03552340529 <-89> <3> \ "\@"                      
