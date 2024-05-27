@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
         name='pysembrane',
-        version='0.0.1',
+        version='0.0.2',
         author_email='sgasga@ulsan.ac.kr',
         description='Python package for membrane based gas separation process simulations',
         long_description_content_type='text/markdown',

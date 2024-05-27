@@ -553,7 +553,6 @@ class MembraneProc:
             
             tol = sum([abs(_err) for _err in err])
         
-            Kg = 0.1
             for jj, _err in enumerate(err):
                 if jj < self._n_comp:
                     fp_0_i[jj] = fp_0_i[jj]-Kg*_err*fp_0_i[jj]
