@@ -1,0 +1,19 @@
+[project]
+name = "pysembrane"
+version = "0.0.2"
+authors = [
+  { name="Nahyoen An", email="anna@kitech.re.kr" },
+  { name="Seongbin Ga", email="sgasga@ulsan.ac.kr" },
+]
+description = "Python package for membrane based gas separation process simulations"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/nahyeonan/pySembrane"
+Issues = "https://github.com/nahyeonan/pySembrane/issues"
