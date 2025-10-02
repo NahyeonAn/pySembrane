@@ -224,7 +224,6 @@ class MembraneProc:
             Pf_i = x_mem*Pf
         else:
             Pf_i = x_i*Pf
-        
         Pp_i = y_i*Pp
         
         dPfdz_den = - 192*self._n_fiber*self._d_outer*(self._d_module + self._n_fiber*self._d_outer)*Rgas*self._T_in*mu_f*F_f_tot
